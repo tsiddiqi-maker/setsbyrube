@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sizing Guide — SetsByRube 💅</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--pink:#ec4899;--pink-light:#f9a8d4;--pink-pale:#fce7f3;--pink-ultra:#fff0f9;--black:#0a0a0a;--white:#ffffff;--gray:#666;--border:#f0d9e8;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden;cursor:none;}
+
+.cursor{width:12px;height:12px;background:var(--pink);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:multiply;}
+.cursor-ring{width:36px;height:36px;border:2px solid var(--pink);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .15s ease;opacity:.5;}
+
+.top-bar{background:var(--black);color:white;padding:10px;white-space:nowrap;overflow:hidden;font-size:12px;font-weight:700;letter-spacing:2px;}
+.top-bar span{display:inline-block;animation:scroll-text 25s linear infinite;}
+@keyframes scroll-text{0%{transform:translateX(100vw)}100%{transform:translateX(-100%)}}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 7%;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);z-index:100;}
+.logo{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;text-decoration:none;color:var(--black);}
+.logo span{color:var(--pink);font-style:italic;}
+.nav-links{display:flex;gap:30px;align-items:center;}
+.nav-links a{text-decoration:none;color:var(--black);font-weight:600;font-size:13px;letter-spacing:1px;text-transform:uppercase;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:var(--pink);transition:width .3s;}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{background:var(--pink)!important;color:white!important;padding:10px 22px!important;border-radius:50px;}
+.nav-cta::after{display:none!important;}
+
+/* HERO BANNER */
+.guide-hero{background:linear-gradient(135deg,#fff0f9,#fce7f3);padding:70px 7%;text-align:center;border-bottom:2px solid var(--border);}
+.guide-hero .section-label{display:inline-block;background:white;color:var(--pink);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:7px 14px;border-radius:50px;margin-bottom:16px;border:2px solid var(--border);}
+.guide-hero h1{font-family:'Playfair Display',serif;font-size:56px;font-weight:900;margin-bottom:14px;line-height:1.1;}
+.guide-hero h1 em{font-style:italic;color:var(--pink);}
+.guide-hero p{color:var(--gray);font-size:17px;max-width:520px;margin:0 auto;line-height:1.7;}
+
+/* SECTIONS */
+.guide-section{padding:80px 7%;}
+.guide-section:nth-child(even){background:#fffafd;}
+.section-label{display:inline-block;background:var(--pink-pale);color:var(--pink);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:7px 14px;border-radius:50px;margin-bottom:12px;}
+.section-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:900;margin-bottom:10px;}
+.section-sub{color:var(--gray);font-size:15px;line-height:1.6;margin-bottom:40px;}
+
+/* HOW TO MEASURE */
+.measure-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;}
+.measure-card{background:white;border:2px solid var(--border);border-radius:22px;padding:30px;text-align:center;transition:transform .2s,box-shadow .2s;}
+.measure-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(236,72,153,.12);border-color:var(--pink-light);}
+.measure-icon{font-size:48px;margin-bottom:14px;display:block;}
+.measure-card h4{font-weight:800;font-size:16px;margin-bottom:8px;}
+.measure-card p{color:var(--gray);font-size:14px;line-height:1.6;}
+.measure-tip{display:inline-block;margin-top:10px;background:var(--pink-pale);color:var(--pink);font-size:12px;font-weight:700;padding:5px 12px;border-radius:50px;}
+
+/* SIZE CHART */
+.size-table-wrap{overflow-x:auto;border-radius:20px;border:2px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,.05);}
+table{width:100%;border-collapse:collapse;font-size:14px;}
+thead{background:var(--black);color:white;}
+thead th{padding:16px 20px;text-align:left;font-size:12px;letter-spacing:1px;text-transform:uppercase;font-weight:800;}
+tbody tr{border-bottom:1px solid var(--border);transition:background .15s;}
+tbody tr:hover{background:var(--pink-ultra);}
+tbody td{padding:14px 20px;font-size:14px;}
+.size-badge{display:inline-block;padding:4px 12px;border-radius:50px;font-weight:800;font-size:12px;}
+.badge-xs{background:#fce7f3;color:#be185d;}
+.badge-s{background:#fef3c7;color:#b45309;}
+.badge-m{background:#d1fae5;color:#065f46;}
+.badge-l{background:#dbeafe;color:#1e40af;}
+.badge-xl{background:#ede9fe;color:#5b21b6;}
+
+.measure-note{margin-top:20px;background:var(--pink-pale);border:1px solid var(--pink-light);border-radius:16px;padding:16px 20px;font-size:13px;color:#9d174d;line-height:1.6;}
+.measure-note strong{font-weight:800;}
+
+/* LENGTH GUIDE */
+.length-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.length-card{border:2px solid var(--border);border-radius:22px;overflow:hidden;background:white;transition:transform .2s,box-shadow .2s;}
+.length-card:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(236,72,153,.14);border-color:var(--pink-light);}
+.length-visual{height:180px;display:flex;align-items:flex-end;justify-content:center;gap:10px;padding:20px;background:linear-gradient(to bottom,#fff0f9,#fce7f3);}
+.length-finger{width:36px;border:3px solid var(--black);border-radius:28px 28px 0 0;background:linear-gradient(to bottom,#fbcfe8,#f9a8d4);position:relative;}
+.length-finger .ln{width:22px;height:34px;border:2px solid var(--black);border-radius:8px 8px 24px 24px;position:absolute;top:5px;left:4px;background:linear-gradient(to bottom,var(--pink),#f43f5e);}
+.short-f{height:90px;}.long-f{height:140px;}
+.length-info{padding:20px 22px;}
+.length-info h4{font-weight:800;font-size:18px;margin-bottom:6px;}
+.length-info p{color:var(--gray);font-size:14px;line-height:1.6;}
+.length-tag{display:inline-block;margin-top:8px;background:var(--pink-pale);color:var(--pink);font-size:12px;font-weight:800;padding:4px 12px;border-radius:50px;}
+
+/* SHAPES GUIDE */
+.shapes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:20px;}
+.shape-card{background:white;border:2px solid var(--border);border-radius:22px;padding:24px 20px;text-align:center;transition:transform .2s,box-shadow .2s,border-color .2s;cursor:default;}
+.shape-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(236,72,153,.14);border-color:var(--pink);}
+.shape-nail-wrap{height:80px;display:flex;justify-content:center;align-items:flex-end;margin-bottom:14px;}
+.shape-nail{width:30px;height:65px;background:linear-gradient(to bottom,var(--pink),#f43f5e);border:2.5px solid var(--black);box-shadow:2px 2px 0px var(--black);}
+/* shape variants */
+.n-almond{border-radius:50% 50% 30% 30% / 40% 40% 10% 10%;}
+.n-coffin{border-radius:4px 4px 0 0;position:relative;}
+.n-coffin::after{content:'';position:absolute;bottom:0;left:4px;right:4px;height:12px;background:inherit;border-radius:0 0 3px 3px;}
+.n-square{border-radius:4px 4px 0 0;}
+.n-round{border-radius:14px 14px 8px 8px;}
+.n-stiletto{border-radius:50% 50% 0 0 / 100% 100% 0 0;width:24px;height:72px;}
+.shape-card h4{font-weight:800;font-size:15px;margin-bottom:5px;}
+.shape-card p{color:var(--gray);font-size:12px;line-height:1.5;}
+
+/* CTA BANNER */
+.cta-banner{background:var(--black);padding:80px 7%;text-align:center;color:white;}
+.cta-banner h2{font-family:'Playfair Display',serif;font-size:46px;font-weight:900;margin-bottom:14px;color:white;}
+.cta-banner h2 em{font-style:italic;color:var(--pink-light);}
+.cta-banner p{color:rgba(255,255,255,.6);font-size:16px;margin-bottom:36px;max-width:480px;margin-left:auto;margin-right:auto;}
+.btn{padding:16px 36px;border-radius:50px;font-weight:800;font-size:14px;text-decoration:none;display:inline-block;letter-spacing:.5px;transition:transform .2s,box-shadow .2s;}
+.btn:hover{transform:translateY(-2px);}
+.btn-pink{background:var(--pink);color:white;box-shadow:0 4px 20px rgba(236,72,153,.4);}
+.btn-pink:hover{box-shadow:0 8px 30px rgba(236,72,153,.6);}
+
+/* footer */
+footer{background:#0a0a0a;padding:30px 7%;text-align:center;border-top:1px solid rgba(255,255,255,.08);}
+footer p{color:rgba(255,255,255,.35);font-size:13px;}
+footer a{color:var(--pink);text-decoration:none;font-weight:700;}
+
+@media(max-width:700px){
+  .guide-hero h1{font-size:38px;}
+  .length-cards{grid-template-columns:1fr;}
+  .shapes-grid{grid-template-columns:repeat(2,1fr);}
+  .guide-section{padding:60px 5%;}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<div class="top-bar">
+  <span>📏 SIZING GUIDE ✨ FIND YOUR PERFECT FIT ✨ CUSTOM PRESS-ON NAILS ✨ @SETSBYRUBES ✨</span>
+</div>
+
+<nav>
+  <a class="logo" href="index.html">Sets<span>ByRube</span></a>
+  <div class="nav-links">
+    <a href="index.html#examples">Examples</a>
+    <a href="index.html#catalog">Catalog</a>
+    <a href="sizing-guide.html">Sizing Guide</a>
+    <a href="https://instagram.com/setsbyrubes" target="_blank">Instagram</a>
+    <a href="index.html#order" class="nav-cta">Order Now 💅</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="guide-hero">
+  <span class="section-label">📏 Fit Guide</span>
+  <h1>Find Your <em>Perfect Fit</em></h1>
+  <p>Everything you need to know about measuring your nails, picking a size, choosing a shape, and deciding on length.</p>
+</div>
+
+<!-- 1. HOW TO MEASURE -->
+<section class="guide-section">
+  <span class="section-label">Step 1</span>
+  <h2 class="section-title">How to Measure Your Nail Width</h2>
+  <p class="section-sub">You'll need a soft measuring tape or a thin strip of paper and a ruler. Measure the widest part of each nail bed.</p>
+
+  <div class="measure-grid">
+    <div class="measure-card">
+      <span class="measure-icon">📏</span>
+      <h4>Option A — Measuring Tape</h4>
+      <p>Wrap a soft tape measure around the widest part of your nail (the base). Write down the measurement in millimeters for each finger.</p>
+      <span class="measure-tip">Most accurate method</span>
+    </div>
+    <div class="measure-card">
+      <span class="measure-icon">📄</span>
+      <h4>Option B — Paper Strip</h4>
+      <p>Cut a thin strip of paper, wrap it snugly around your nail at the widest point, mark where it overlaps, then measure that strip flat with a ruler.</p>
+      <span class="measure-tip">Works great at home</span>
+    </div>
+    <div class="measure-card">
+      <span class="measure-icon">👆</span>
+      <h4>Measure All 10 Nails</h4>
+      <p>Each finger is different! Measure every single nail individually and include all 10 measurements in your order notes for the best fit.</p>
+      <span class="measure-tip">Don't skip the pinky!</span>
+    </div>
+    <div class="measure-card">
+      <span class="measure-icon">💡</span>
+      <h4>Pro Tips</h4>
+      <p>Measure at the base (widest part) of your nail. If you're between two sizes, go one size up — press-ons should never feel tight or pinch the sides.</p>
+      <span class="measure-tip">When in doubt, size up</span>
+    </div>
+  </div>
+
+  <div class="measure-note">
+    <strong>📸 Tip:</strong> You can also trace your nails on a piece of paper, scan or photograph it, and send the image with your order — SetsByRube can match your nails directly from the tracing!
+  </div>
+</section>
+
+<!-- 2. SIZE CHART -->
+<section class="guide-section">
+  <span class="section-label">Step 2</span>
+  <h2 class="section-title">Standard Size Chart (XS–XL)</h2>
+  <p class="section-sub">Match your nail width measurement to the size below. Most full sets include sizes 0–9 (one per finger), so include all 10 nail measurements when you order!</p>
+
+  <div class="size-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Size</th>
+          <th>Width (mm)</th>
+          <th>Best For</th>
+          <th>Common Fingers</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="size-badge badge-xs">XS</span></td><td>10–12 mm</td><td>Very petite / narrow nail beds</td><td>Pinky, ring (small hands)</td></tr>
+        <tr><td><span class="size-badge badge-s">S</span></td><td>13–14 mm</td><td>Small / slender nails</td><td>Pinky, ring, index (small)</td></tr>
+        <tr><td><span class="size-badge badge-m">M</span></td><td>15–16 mm</td><td>Average nail width — most common</td><td>Index, ring, middle (avg)</td></tr>
+        <tr><td><span class="size-badge badge-l">L</span></td><td>17–18 mm</td><td>Wider nail beds</td><td>Middle, index (wide)</td></tr>
+        <tr><td><span class="size-badge badge-xl">XL</span></td><td>19–21 mm</td><td>Very wide / broad nails</td><td>Thumb (most people)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="measure-note" style="margin-top:20px;">
+    <strong>Note:</strong> These are general guidelines. SetsByRube files each nail by hand, so if your measurements are in between sizes just let her know and she'll customize the fit!
+  </div>
+</section>
+
+<!-- 3. LENGTH GUIDE -->
+<section class="guide-section">
+  <span class="section-label">Step 3</span>
+  <h2 class="section-title">Short vs Long — Which Length Is Right?</h2>
+  <p class="section-sub">Not sure how long to go? Here's a quick guide to help you decide.</p>
+
+  <div class="length-cards">
+    <div class="length-card">
+      <div class="length-visual">
+        <div class="length-finger short-f"><div class="ln"></div></div>
+        <div class="length-finger short-f"><div class="ln"></div></div>
+        <div class="length-finger short-f"><div class="ln"></div></div>
+        <div class="length-finger short-f"><div class="ln"></div></div>
+      </div>
+      <div class="length-info">
+        <h4>Short Length</h4>
+        <p>Extends just past the fingertip — super wearable for everyday life. Great for work, school, or if you're new to press-ons. Easy to type, do your hair, anything!</p>
+        <span class="length-tag">Best for: Everyday wear</span>
+      </div>
+    </div>
+    <div class="length-card">
+      <div class="length-visual">
+        <div class="length-finger long-f"><div class="ln"></div></div>
+        <div class="length-finger long-f"><div class="ln"></div></div>
+        <div class="length-finger long-f"><div class="ln"></div></div>
+        <div class="length-finger long-f"><div class="ln"></div></div>
+      </div>
+      <div class="length-info">
+        <h4>Long Length</h4>
+        <p>Dramatic, bold, statement-making. Extends well past the fingertip — perfect for events, photoshoots, birthdays, or any time you want all eyes on your nails ✨</p>
+        <span class="length-tag">Best for: Special occasions</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. SHAPE GUIDE -->
+<section class="guide-section">
+  <span class="section-label">Step 4</span>
+  <h2 class="section-title">Shape Guide</h2>
+  <p class="section-sub">Not sure which shape suits you? Here's the breakdown of every shape SetsByRube offers.</p>
+
+  <div class="shapes-grid">
+    <div class="shape-card">
+      <div class="shape-nail-wrap"><div class="shape-nail n-almond"></div></div>
+      <h4>Almond</h4>
+      <p>Tapers to a soft rounded point. Elegant, feminine, and elongates the fingers. The most flattering on most hand shapes.</p>
+    </div>
+    <div class="shape-card">
+      <div class="shape-nail-wrap"><div class="shape-nail n-coffin"></div></div>
+      <h4>Coffin</h4>
+      <p>Tapered sides with a flat top. Bold and dramatic — also called ballerina nails. Super popular for max design sets.</p>
+    </div>
+    <div class="shape-card">
+      <div class="shape-nail-wrap"><div class="shape-nail n-square"></div></div>
+      <h4>Square</h4>
+      <p>Straight sides with a flat top. Clean, classic, and modern. Works great for French tips and minimal designs.</p>
+    </div>
+    <div class="shape-card">
+      <div class="shape-nail-wrap"><div class="shape-nail n-round"></div></div>
+      <h4>Round</h4>
+      <p>Straight sides with a softly curved top — follows the natural nail shape. The most low-key and natural-looking option.</p>
+    </div>
+    <div class="shape-card">
+      <div class="shape-nail-wrap"><div class="shape-nail n-stiletto"></div></div>
+      <h4>Stiletto</h4>
+      <p>Dramatically tapered to a sharp point. The most daring shape — makes a serious statement. Best for long length.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-banner">
+  <h2>Ready to Order Your <em>Dream Set?</em></h2>
+  <p>Now that you know your size and shape — let's build it! Include your measurements in the order notes.</p>
+  <a class="btn btn-pink" href="index.html#order">Order Now 💅</a>
+</div>
+
+<footer>
+  <p>© 2025 SetsByRube — <a href="index.html">Back to Home</a> · <a href="https://instagram.com/setsbyrubes" target="_blank">@setsbyrubes</a></p>
+</footer>
+
+<script>
+const cursor=document.getElementById('cursor');
+const cursorRing=document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
+(function loop(){rx+=(mx-rx)*.15;ry+=(my-ry)*.15;cursorRing.style.left=rx+'px';cursorRing.style.top=ry+'px';requestAnimationFrame(loop);})();
+</script>
+</body>
+</html>
