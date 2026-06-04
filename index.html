@@ -132,9 +132,10 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 7
 .how-it-works .section-label{background:rgba(236,72,153,.2);}
 .how-it-works .section-title{color:white;}
 .how-it-works .section-sub{color:rgba(255,255,255,.6);}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-top:50px;}
-.step{text-align:center;padding:35px 20px;border-radius:24px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);transition:transform .2s,border-color .2s;}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:50px;}
+.step{text-align:center;padding:35px 20px;border-radius:24px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);transition:transform .2s,border-color .2s;color:white;}
 .step:hover{transform:translateY(-5px);border-color:var(--pink);}
+.step-icon{font-size:40px;margin-bottom:15px;display:block;}
 .step-icon{font-size:40px;margin-bottom:15px;display:block;}
 .step h4{font-size:17px;font-weight:800;margin-bottom:8px;color:white;}
 .step p{color:rgba(255,255,255,.55);font-size:14px;line-height:1.6;}
@@ -440,7 +441,7 @@ footer ul li a:hover{color:var(--pink);}
   <div class="reveal">
     <span class="section-label">💅 Inspo Gallery</span>
     <h2 class="section-title">Featured Looks</h2>
-    <p class="section-sub">Sets inspirations by SetsByRube!</p>
+    <p class="section-sub">Real sets made by SetsByRube — click any photo to zoom in!</p>
   </div>
   <div class="examples-grid">
 
@@ -473,13 +474,13 @@ footer ul li a:hover{color:var(--pink);}
     <!-- FIXED: was missing example-img-wrap div -->
     <div class="example-card reveal reveal-delay-2">
       <div class="example-img-wrap">
-        <img src="aeaef559d720c328970db313674a75c3.jpg" alt="pink camo w/star" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <img src="nail_max1.png" alt="Red Floral" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="example-placeholder" style="display:none">🌸</div>
         <span class="example-badge">🔥 Best Seller</span>
         <span class="example-tier-badge badge-max">Max $25</span>
       </div>
       <div class="example-info">
-        <div class="example-info-text"><h4>pink camo w/star</h4><span>Full luxury art set</span></div>
+        <div class="example-info-text"><h4>Red Floral Almond</h4><span>Full luxury art set</span></div>
         <a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a>
       </div>
     </div>
@@ -609,10 +610,10 @@ footer ul li a:hover{color:var(--pink);}
     <div class="nail-grid">
       <div class="nail-card reveal">
         <div class="nail-card-img-wrap">
-          <img class="nail-card-img" src="aeaef559d720c328970db313674a75c3.jpg" alt="pink camo w/star" onerror="this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'">
+          <img class="nail-card-img" src="nail_max1.png" alt="Red Floral Almond" onerror="this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'">
         </div>
         <div class="nail-img-placeholder" style="display:none">🌹</div>
-        <div class="nail-card-info"><span> /pink camo w/star</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+        <div class="nail-card-info"><span>Red Floral / Almond</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
       </div>
       <div class="nail-card reveal reveal-delay-1">
         <div class="nail-card-img-wrap">
@@ -654,17 +655,17 @@ footer ul li a:hover{color:var(--pink);}
 </section>
 
 <!-- HOW IT WORKS -->
-<section class="how-it-works" id="how">
-  <div class="reveal">
+<section class="how-it-works" id="how" style="background:#0a0a0a;color:white;">
+  <div>
     <span class="section-label">Simple Process</span>
     <h2 class="section-title">How It Works</h2>
     <p class="section-sub">Ordering your custom set is super easy — done in minutes.</p>
   </div>
   <div class="steps">
-    <div class="step reveal"><span class="step-num">1</span><span class="step-icon">💅</span><h4>Pick Your Style</h4><p>Browse the catalog and choose your tier, shape, and length.</p></div>
-    <div class="step reveal reveal-delay-1"><span class="step-num">2</span><span class="step-icon">📋</span><h4>Fill Out the Form</h4><p>Tell us exactly what you want — add inspo photos too!</p></div>
-    <div class="step reveal reveal-delay-2"><span class="step-num">3</span><span class="step-icon">📸</span><h4>Send to Instagram</h4><p>Hit submit and your order gets copied — paste it in the DM!</p></div>
-    <div class="step reveal reveal-delay-3"><span class="step-num">4</span><span class="step-icon">💖</span><h4>Get Your Set</h4><p>Your dream nails will be shipped or dropped off right to your door!</p></div>
+    <div class="step"><span class="step-num">1</span><span class="step-icon">💅</span><h4>Pick Your Style</h4><p>Browse the catalog and choose your tier, shape, and length.</p></div>
+    <div class="step"><span class="step-num">2</span><span class="step-icon">📋</span><h4>Fill Out the Form</h4><p>Tell us exactly what you want — add inspo photos too!</p></div>
+    <div class="step"><span class="step-num">3</span><span class="step-icon">📸</span><h4>Send to Instagram</h4><p>Hit submit and your order gets copied — paste it in the DM!</p></div>
+    <div class="step"><span class="step-num">4</span><span class="step-icon">💖</span><h4>Get Your Set</h4><p>Your dream nails will be shipped or dropped off right to your door!</p></div>
   </div>
 </section>
 
