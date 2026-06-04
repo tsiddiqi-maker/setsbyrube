@@ -82,9 +82,8 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 7
 .examples-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;margin-top:10px;}
 .example-card{border-radius:24px;overflow:hidden;background:white;border:2px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,.06);transition:transform .25s,box-shadow .25s;position:relative;cursor:pointer;}
 .example-card:hover{transform:translateY(-7px);box-shadow:0 16px 40px rgba(236,72,153,.18);border-color:var(--pink-light);}
-/* FIX: reduced height, contain not cover so images aren't clipped */
-.example-img-wrap{position:relative;height:220px;overflow:hidden;background:linear-gradient(135deg,#fce7f3,#fff0f9);display:flex;align-items:center;justify-content:center;}
-.example-img-wrap img{width:100%;height:100%;object-fit:contain;padding:8px;transition:transform .3s ease;}
+.example-img-wrap{position:relative;height:260px;overflow:hidden;background:linear-gradient(135deg,#fce7f3,#fff0f9);display:flex;align-items:center;justify-content:center;}
+.example-img-wrap img{width:100%;height:100%;object-fit:contain;transition:transform .3s ease;}
 .example-card:hover .example-img-wrap img{transform:scale(1.04);}
 .example-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:60px;}
 .example-badge{position:absolute;top:12px;left:12px;background:var(--black);color:white;font-size:11px;font-weight:800;padding:5px 12px;border-radius:50px;letter-spacing:.5px;z-index:2;}
@@ -92,11 +91,10 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 7
 .badge-plain{background:#fce7f3;color:#be185d;}
 .badge-minimal{background:#ede9fe;color:#7c3aed;}
 .badge-max{background:#fef3c7;color:#b45309;}
-/* zoom hint overlay */
-.zoom-hint{position:absolute;inset:0;background:rgba(236,72,153,0);display:flex;align-items:center;justify-content:center;transition:background .3s;z-index:1;}
-.zoom-hint span{opacity:0;transform:scale(.7);transition:opacity .25s,transform .25s;background:white;color:var(--pink);font-size:13px;font-weight:800;padding:10px 20px;border-radius:50px;box-shadow:0 4px 20px rgba(0,0,0,.2);}
-.example-card:hover .zoom-hint{background:rgba(236,72,153,.15);}
-.example-card:hover .zoom-hint span{opacity:1;transform:scale(1);}
+
+
+.example-card:hover 
+.example-card:hover 
 .example-info{padding:16px 18px;display:flex;justify-content:space-between;align-items:center;}
 .example-info-text h4{font-weight:800;font-size:15px;margin-bottom:2px;}
 .example-info-text span{font-size:13px;color:var(--gray);}
@@ -117,17 +115,17 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 7
 .nail-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;}
 .nail-card{border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.07);border:2px solid var(--border);transition:transform .25s,box-shadow .25s;background:white;cursor:pointer;position:relative;}
 .nail-card:hover{transform:translateY(-6px);box-shadow:0 12px 35px rgba(236,72,153,.18);border-color:var(--pink-light);}
-/* FIX: contain so images aren't clipped/zoomed */
-.nail-card-img{width:100%;height:210px;object-fit:contain;display:block;padding:10px;background:linear-gradient(135deg,#fce7f3,#fff0f9);transition:transform .3s ease;}
+/* Image wrapper for catalog cards */
+.nail-card-img-wrap{position:relative;width:100%;height:210px;overflow:hidden;background:linear-gradient(135deg,#fce7f3,#fff0f9);}
+.nail-card-img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .3s ease;}
 .nail-card:hover .nail-card-img{transform:scale(1.04);}
 .nail-img-placeholder{width:100%;height:210px;display:flex;align-items:center;justify-content:center;font-size:50px;background:linear-gradient(135deg,#fce7f3,#fff0f9);}
 .nail-card-info{padding:14px 16px;display:flex;justify-content:space-between;align-items:center;}
 .nail-card-info span{font-weight:600;font-size:14px;color:var(--gray);}
-/* zoom overlay on nail cards */
-.nail-zoom-hint{position:absolute;top:0;left:0;right:0;height:210px;background:rgba(236,72,153,0);display:flex;align-items:center;justify-content:center;transition:background .3s;z-index:1;pointer-events:none;}
-.nail-zoom-hint span{opacity:0;transform:scale(.7);transition:opacity .25s,transform .25s;background:white;color:var(--pink);font-size:12px;font-weight:800;padding:8px 16px;border-radius:50px;box-shadow:0 4px 20px rgba(0,0,0,.2);}
-.nail-card:hover .nail-zoom-hint{background:rgba(236,72,153,.12);}
-.nail-card:hover .nail-zoom-hint span{opacity:1;transform:scale(1);}
+
+
+.nail-card:hover 
+.nail-card:hover 
 
 /* HOW IT WORKS */
 .how-it-works{padding:90px 7%;background:var(--black);color:white;}
@@ -220,13 +218,13 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
 .review-submit-btn:hover{background:var(--pink);}
 .review-submit-btn:disabled{opacity:.6;cursor:not-allowed;}
 
-/* LIGHTBOX — fixed & working */
+/* LIGHTBOX */
 .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:99999;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s;}
 .lightbox.open{opacity:1;pointer-events:all;}
 .lightbox-inner{background:white;border-radius:28px;overflow:hidden;max-width:520px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,.5);transform:scale(.88) translateY(20px);transition:transform .35s cubic-bezier(.34,1.56,.64,1);position:relative;}
 .lightbox.open .lightbox-inner{transform:scale(1) translateY(0);}
-.lightbox-img-area{background:linear-gradient(135deg,#fce7f3,#fff0f9);display:flex;align-items:center;justify-content:center;padding:20px;min-height:300px;}
-.lightbox-img-area img{max-width:100%;max-height:460px;object-fit:contain;display:block;border-radius:12px;}
+.lightbox-img-area{background:linear-gradient(135deg,#fce7f3,#fff0f9);display:flex;align-items:center;justify-content:center;padding:0;min-height:360px;overflow:hidden;}
+.lightbox-img-area img{width:100%;height:100%;max-height:500px;object-fit:contain;display:block;}
 .lightbox-placeholder-big{font-size:100px;text-align:center;padding:40px;}
 .lightbox-info{padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--border);}
 .lightbox-info-text h4{font-weight:800;font-size:16px;margin-bottom:2px;}
@@ -235,7 +233,31 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
 .lightbox-close:hover{background:var(--pink-pale);transform:rotate(90deg);}
 .lightbox-tier-pill{position:absolute;top:14px;left:14px;font-size:11px;font-weight:800;padding:5px 12px;border-radius:50px;z-index:2;}
 
-/* REFUND / CONTACT pages */
+/* MODALS */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:99998;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s;}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.modal-box{background:white;border-radius:28px;max-width:600px;width:100%;max-height:80vh;overflow-y:auto;padding:40px;box-shadow:0 30px 80px rgba(0,0,0,.3);transform:scale(.9) translateY(20px);transition:transform .35s cubic-bezier(.34,1.56,.64,1);position:relative;}
+.modal-overlay.open .modal-box{transform:scale(1) translateY(0);}
+.modal-close{position:absolute;top:18px;right:18px;width:36px;height:36px;background:var(--pink-pale);border:none;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s;}
+.modal-close:hover{background:var(--pink-light);transform:rotate(90deg);}
+.modal-box h2{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;margin-bottom:16px;padding-right:40px;}
+.modal-box h2 em{font-style:italic;color:var(--pink);}
+.modal-box p{color:var(--gray);font-size:14px;line-height:1.8;margin-bottom:12px;}
+.modal-box h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:900;margin:20px 0 8px;}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:.1s;}
+.reveal-delay-2{transition-delay:.2s;}
+.reveal-delay-3{transition-delay:.3s;}
+.reveal-delay-4{transition-delay:.4s;}
+
+/* TOAST */
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--black);color:white;padding:16px 28px;border-radius:50px;font-weight:700;font-size:14px;z-index:999999;border:2px solid var(--pink);transition:transform .4s cubic-bezier(.34,1.56,.64,1);white-space:nowrap;}
+.toast.show{transform:translateX(-50%) translateY(0);}
+
+/* SIMPLE PAGES */
 .simple-page{padding:80px 7%;max-width:800px;}
 .simple-page h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:900;margin-bottom:16px;}
 .simple-page h1 em{font-style:italic;color:var(--pink);}
@@ -266,30 +288,6 @@ footer ul li a:hover{color:var(--pink);}
 .footer-bottom p{color:rgba(255,255,255,.35);font-size:13px;}
 .footer-hearts{color:var(--pink);font-size:18px;}
 
-/* MODAL PAGES (refund, contact shown as overlay) */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:99998;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s;}
-.modal-overlay.open{opacity:1;pointer-events:all;}
-.modal-box{background:white;border-radius:28px;max-width:600px;width:100%;max-height:80vh;overflow-y:auto;padding:40px;box-shadow:0 30px 80px rgba(0,0,0,.3);transform:scale(.9) translateY(20px);transition:transform .35s cubic-bezier(.34,1.56,.64,1);position:relative;}
-.modal-overlay.open .modal-box{transform:scale(1) translateY(0);}
-.modal-close{position:absolute;top:18px;right:18px;width:36px;height:36px;background:var(--pink-pale);border:none;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s;}
-.modal-close:hover{background:var(--pink-light);transform:rotate(90deg);}
-.modal-box h2{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;margin-bottom:16px;padding-right:40px;}
-.modal-box h2 em{font-style:italic;color:var(--pink);}
-.modal-box p{color:var(--gray);font-size:14px;line-height:1.8;margin-bottom:12px;}
-.modal-box h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:900;margin:20px 0 8px;}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease;}
-.reveal.visible{opacity:1;transform:translateY(0);}
-.reveal-delay-1{transition-delay:.1s;}
-.reveal-delay-2{transition-delay:.2s;}
-.reveal-delay-3{transition-delay:.3s;}
-.reveal-delay-4{transition-delay:.4s;}
-
-/* TOAST */
-.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--black);color:white;padding:16px 28px;border-radius:50px;font-weight:700;font-size:14px;z-index:999999;border:2px solid var(--pink);transition:transform .4s cubic-bezier(.34,1.56,.64,1);white-space:nowrap;}
-.toast.show{transform:translateX(-50%) translateY(0);}
-
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;padding:50px 5%;min-height:auto;gap:40px;}
   .hero-text h1{font-size:44px;}
@@ -314,7 +312,7 @@ footer ul li a:hover{color:var(--pink);}
 <div class="cursor-ring" id="cursorRing"></div>
 <div class="toast" id="toast"></div>
 
-<!-- ======= LIGHTBOX ======= -->
+<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <div class="lightbox-inner">
     <button class="lightbox-close" id="lightboxCloseBtn">✕</button>
@@ -333,7 +331,7 @@ footer ul li a:hover{color:var(--pink);}
   </div>
 </div>
 
-<!-- ======= REFUND MODAL ======= -->
+<!-- REFUND MODAL -->
 <div class="modal-overlay" id="refundModal">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal('refundModal')">✕</button>
@@ -349,7 +347,7 @@ footer ul li a:hover{color:var(--pink);}
   </div>
 </div>
 
-<!-- ======= CONTACT MODAL ======= -->
+<!-- CONTACT MODAL -->
 <div class="modal-overlay" id="contactModal">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal('contactModal')">✕</button>
@@ -445,11 +443,11 @@ footer ul li a:hover{color:var(--pink);}
     <p class="section-sub">Real sets made by SetsByRube — click any photo to zoom in!</p>
   </div>
   <div class="examples-grid">
-    <div class="example-card reveal" onclick="openLightbox('nail_plain1.png','💅','Classic White Coffin','Plain Set — $8','Plain $8','badge-plain')">
+
+    <div class="example-card reveal">
       <div class="example-img-wrap">
         <img src="nail_plain1.png" alt="White Coffin Set" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="example-placeholder" style="display:none">💅</div>
-        <div class="zoom-hint"><span>🔍 Tap to Zoom</span></div>
         <span class="example-badge">⭐ Fan Fave</span>
         <span class="example-tier-badge badge-plain">Plain $8</span>
       </div>
@@ -458,11 +456,11 @@ footer ul li a:hover{color:var(--pink);}
         <a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a>
       </div>
     </div>
-    <div class="example-card reveal reveal-delay-1" onclick="openLightbox('nail_min1.png','⭐','Gold Stars Round','Minimal Design — $16','Minimal $16','badge-minimal')">
+
+    <div class="example-card reveal reveal-delay-1">
       <div class="example-img-wrap">
         <img src="nail_min1.png" alt="Gold Stars" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="example-placeholder" style="display:none">⭐</div>
-        <div class="zoom-hint"><span>🔍 Tap to Zoom</span></div>
         <span class="example-badge">✨ Trending</span>
         <span class="example-tier-badge badge-minimal">Minimal $16</span>
       </div>
@@ -471,11 +469,12 @@ footer ul li a:hover{color:var(--pink);}
         <a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a>
       </div>
     </div>
-    <div class="example-card reveal reveal-delay-2" onclick="openLightbox('nail_max1.png','🌸','Red Floral Almond','Maximum Design — $25','Max $25','badge-max')">
+
+    <!-- FIXED: was missing example-img-wrap div -->
+    <div class="example-card reveal reveal-delay-2">
       <div class="example-img-wrap">
         <img src="nail_max1.png" alt="Red Floral" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="example-placeholder" style="display:none">🌸</div>
-        <div class="zoom-hint"><span>🔍 Tap to Zoom</span></div>
         <span class="example-badge">🔥 Best Seller</span>
         <span class="example-tier-badge badge-max">Max $25</span>
       </div>
@@ -484,11 +483,11 @@ footer ul li a:hover{color:var(--pink);}
         <a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a>
       </div>
     </div>
-    <div class="example-card reveal reveal-delay-3" onclick="openLightbox('nail_max3.png','🍒','Cherry Leopard Coffin','Maximum Design — $25','Max $25','badge-max')">
+
+    <div class="example-card reveal reveal-delay-3">
       <div class="example-img-wrap">
         <img src="nail_max3.png" alt="Cherry Leopard" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="example-placeholder" style="display:none">🍒</div>
-        <div class="zoom-hint"><span>🔍 Tap to Zoom</span></div>
         <span class="example-badge">💖 New</span>
         <span class="example-tier-badge badge-max">Max $25</span>
       </div>
@@ -497,6 +496,7 @@ footer ul li a:hover{color:var(--pink);}
         <a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -519,34 +519,39 @@ footer ul li a:hover{color:var(--pink);}
       <div class="tier-price">$8</div>
     </div>
     <div class="nail-grid">
-      <div class="nail-card reveal" onclick="openLightbox('nail_plain1.png','💅','White Coffin','Plain Set — $8','Plain $8','badge-plain')">
-        <img class="nail-card-img" src="nail_plain1.png" alt="White Coffin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="nail-card reveal">
+        <div class="nail-card-img-wrap">
+          <img class="nail-card-img" src="nail_plain1.png" alt="White Coffin" onerror="this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'">
+        </div>
         <div class="nail-img-placeholder" style="display:none">💅</div>
-        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
         <div class="nail-card-info"><span>White / Coffin</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
       </div>
-      <div class="nail-card reveal reveal-delay-1" onclick="openLightbox('nail_plain2.png','🩷','Baby Pink Almond','Plain Set — $8','Plain $8','badge-plain')">
-        <img class="nail-card-img" src="nail_plain2.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="nail-card reveal reveal-delay-1">
+        <div class="nail-card-img-wrap">
+          <img class="nail-card-img" src="nail_plain2.png" alt="Baby Pink Almond" onerror="this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'">
+        </div>
         <div class="nail-img-placeholder" style="display:none">🩷</div>
-        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
         <div class="nail-card-info"><span>Baby Pink / Almond</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
       </div>
-      <div class="nail-card reveal reveal-delay-2" onclick="openLightbox('nail_plain3.png','🤍','Nude Almond','Plain Set — $8','Plain $8','badge-plain')">
-        <img class="nail-card-img" src="nail_plain3.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="nail-card reveal reveal-delay-2">
+        <div class="nail-card-img-wrap">
+          <img class="nail-card-img" src="nail_plain3.png" alt="Nude Almond" onerror="this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'">
+        </div>
         <div class="nail-img-placeholder" style="display:none">🤍</div>
-        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
         <div class="nail-card-info"><span>Nude / Almond</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
       </div>
-      <div class="nail-card reveal reveal-delay-3" onclick="openLightbox('nail_plain4.png','🍼','Milky White Almond','Plain Set — $8','Plain $8','badge-plain')">
-        <img class="nail-card-img" src="nail_plain4.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="nail-card reveal reveal-delay-3">
+        <div class="nail-card-img-wrap">
+          <img class="nail-card-img" src="nail_plain4.png" alt="Milky White Almond" onerror="this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'">
+        </div>
         <div class="nail-img-placeholder" style="display:none">🍼</div>
-        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
         <div class="nail-card-info"><span>Milky White / Almond</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
       </div>
-      <div class="nail-card reveal reveal-delay-4" onclick="openLightbox('nail_plain5.png','🫧','Nude Beige Square','Plain Set — $8','Plain $8','badge-plain')">
-        <img class="nail-card-img" src="nail_plain5.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="nail-card reveal reveal-delay-4">
+        <div class="nail-card-img-wrap">
+          <img class="nail-card-img" src="nail_plain5.png" alt="Nude Beige Square" onerror="this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'">
+        </div>
         <div class="nail-img-placeholder" style="display:none">🫧</div>
-        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
         <div class="nail-card-info"><span>Nude Beige / Square</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
       </div>
     </div>
@@ -558,34 +563,39 @@ footer ul li a:hover{color:var(--pink);}
       <div class="tier-price">$16</div>
     </div>
     <div class="nail-grid">
-      <div class="nail-card reveal" onclick="openLightbox('nail_min1.png','⭐','Gold Stars Round','Minimal Design — $16','Minimal $16','badge-minimal')">
-        <img class="nail-card-img" src="nail_min1.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="nail-card reveal">
+        <div class="nail-card-img-wrap">
+          <img class="nail-card-img" src="nail_min1.png" alt="Gold Stars Round" onerror="this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'">
+        </div>
         <div class="nail-img-placeholder" style="display:none">⭐</div>
-        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
         <div class="nail-card-info"><span>Gold Stars / Round</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
       </div>
-      <div class="nail-card reveal reveal-delay-1" onclick="openLightbox('nail_min2.png','🍓','Strawberry Square','Minimal Design — $16','Minimal $16','badge-minimal')">
-        <img class="nail-card-img" src="nail_min2.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="nail-card reveal reveal-delay-1">
+        <div class="nail-card-img-wrap">
+          <img class="nail-card-img" src="nail_min2.png" alt="Strawberry Square" onerror="this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'">
+        </div>
         <div class="nail-img-placeholder" style="display:none">🍓</div>
-        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
         <div class="nail-card-info"><span>Strawberry / Square</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
       </div>
-      <div class="nail-card reveal reveal-delay-2" onclick="openLightbox('nail_min3.png','🔵','Color Dots Round','Minimal Design — $16','Minimal $16','badge-minimal')">
-        <img class="nail-card-img" src="nail_min3.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="nail-card reveal reveal-delay-2">
+        <div class="nail-card-img-wrap">
+          <img class="nail-card-img" src="nail_min3.png" alt="Color Dots Round" onerror="this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'">
+        </div>
         <div class="nail-img-placeholder" style="display:none">🔵</div>
-        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
         <div class="nail-card-info"><span>Color Dots / Round</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
       </div>
-      <div class="nail-card reveal reveal-delay-3" onclick="openLightbox('nail_min4.png','💗','Heart Detail Square','Minimal Design — $16','Minimal $16','badge-minimal')">
-        <img class="nail-card-img" src="nail_min4.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="nail-card reveal reveal-delay-3">
+        <div class="nail-card-img-wrap">
+          <img class="nail-card-img" src="nail_min4.png" alt="Heart Detail Square" onerror="this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'">
+        </div>
         <div class="nail-img-placeholder" style="display:none">💗</div>
-        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
         <div class="nail-card-info"><span>Heart Detail / Square</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
       </div>
-      <div class="nail-card reveal reveal-delay-4" onclick="openLightbox('nail_min5.png','🌸','Mini Flowers Round','Minimal Design — $16','Minimal $16','badge-minimal')">
-        <img class="nail-card-img" src="nail_min5.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="nail-card reveal reveal-delay-4">
+        <div class="nail-card-img-wrap">
+          <img class="nail-card-img" src="nail_min5.png" alt="Mini Flowers Round" onerror="this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'">
+        </div>
         <div class="nail-img-placeholder" style="display:none">🌸</div>
-        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
         <div class="nail-card-info"><span>Mini Flowers / Round</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
       </div>
     </div>
@@ -597,40 +607,46 @@ footer ul li a:hover{color:var(--pink);}
       <div class="tier-price">$25</div>
     </div>
     <div class="nail-grid">
-      <div class="nail-card reveal" onclick="openLightbox('nail_max1.png','🌹','Red Floral Almond','Maximum Design — $25','Max $25','badge-max')">
-        <img class="nail-card-img" src="nail_max1.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="nail-card reveal">
+        <div class="nail-card-img-wrap">
+          <img class="nail-card-img" src="aeaef559d720c328970db313674a75c3.jpg" alt="pink camo w/star" onerror="this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'">
+        </div>
         <div class="nail-img-placeholder" style="display:none">🌹</div>
-        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
         <div class="nail-card-info"><span>Red Floral / Almond</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
       </div>
-      <div class="nail-card reveal reveal-delay-1" onclick="openLightbox('nail_max2.png','🌻','Yellow Daisy Coffin','Maximum Design — $25','Max $25','badge-max')">
-        <img class="nail-card-img" src="nail_max2.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="nail-card reveal reveal-delay-1">
+        <div class="nail-card-img-wrap">
+          <img class="nail-card-img" src="nail_max2.png" alt="Yellow Daisy Coffin" onerror="this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'">
+        </div>
         <div class="nail-img-placeholder" style="display:none">🌻</div>
-        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
         <div class="nail-card-info"><span>Yellow Daisy / Coffin</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
       </div>
-      <div class="nail-card reveal reveal-delay-2" onclick="openLightbox('nail_max3.png','🍒','Cherry Leopard Coffin','Maximum Design — $25','Max $25','badge-max')">
-        <img class="nail-card-img" src="nail_max3.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="nail-card reveal reveal-delay-2">
+        <div class="nail-card-img-wrap">
+          <img class="nail-card-img" src="nail_max3.png" alt="Cherry Leopard Coffin" onerror="this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'">
+        </div>
         <div class="nail-img-placeholder" style="display:none">🍒</div>
-        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
         <div class="nail-card-info"><span>Cherry Leopard / Coffin</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
       </div>
-      <div class="nail-card reveal reveal-delay-3" onclick="openLightbox('nail_max4.png','✨','Burgundy Gold Coffin','Maximum Design — $25','Max $25','badge-max')">
-        <img class="nail-card-img" src="nail_max4.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="nail-card reveal reveal-delay-3">
+        <div class="nail-card-img-wrap">
+          <img class="nail-card-img" src="nail_max4.png" alt="Burgundy Gold Coffin" onerror="this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'">
+        </div>
         <div class="nail-img-placeholder" style="display:none">✨</div>
-        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
         <div class="nail-card-info"><span>Burgundy Gold / Coffin</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
       </div>
-      <div class="nail-card reveal reveal-delay-4" onclick="openLightbox('nail_max5.png','🪷','3D Floral Coffin','Maximum Design — $25','Max $25','badge-max')">
-        <img class="nail-card-img" src="nail_max5.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="nail-card reveal reveal-delay-4">
+        <div class="nail-card-img-wrap">
+          <img class="nail-card-img" src="nail_max5.png" alt="3D Floral Coffin" onerror="this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'">
+        </div>
         <div class="nail-img-placeholder" style="display:none">🪷</div>
-        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
         <div class="nail-card-info"><span>3D Floral / Coffin</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
       </div>
-      <div class="nail-card reveal" onclick="openLightbox('nail_max6.png','🖤','Pink & Black Swirl Square','Maximum Design — $25','Max $25','badge-max')">
-        <img class="nail-card-img" src="nail_max6.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="nail-card reveal">
+        <div class="nail-card-img-wrap">
+          <img class="nail-card-img" src="nail_max6.png" alt="Pink Black Swirl Square" onerror="this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'">
+        </div>
         <div class="nail-img-placeholder" style="display:none">🖤</div>
-        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
         <div class="nail-card-info"><span>Pink & Black Swirl / Square</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
       </div>
     </div>
