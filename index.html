@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SetsByRube 💅</title>
+<title>SetsByRube 💅 — Custom Handmade Press-On Nails</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
@@ -13,23 +13,15 @@
 }
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden;cursor:none;}
-
-/* CURSOR */
 .cursor{width:12px;height:12px;background:var(--pink);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s,width .2s,height .2s;mix-blend-mode:multiply;}
 .cursor-ring{width:36px;height:36px;border:2px solid var(--pink);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .15s ease;opacity:.5;}
 .cursor.big{width:24px;height:24px;}
 @media(hover:none){.cursor,.cursor-ring{display:none;}body{cursor:auto;}}
-
-/* SPARKLES */
 .sparkle{position:fixed;pointer-events:none;z-index:9997;font-size:14px;animation:sparkle-out .7s ease forwards;}
 @keyframes sparkle-out{0%{opacity:1;transform:scale(1) translateY(0)}100%{opacity:0;transform:scale(.3) translateY(-30px)}}
-
-/* TOP BAR */
 .top-bar{background:var(--black);color:white;padding:10px;white-space:nowrap;overflow:hidden;font-size:12px;font-weight:700;letter-spacing:2px;}
 .top-bar span{display:inline-block;animation:scroll-text 25s linear infinite;}
 @keyframes scroll-text{0%{transform:translateX(100vw)}100%{transform:translateX(-100%)}}
-
-/* NAV */
 nav{display:flex;justify-content:space-between;align-items:center;padding:20px 7%;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);z-index:100;}
 .logo{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;text-decoration:none;color:var(--black);letter-spacing:-1px;}
 .logo span{color:var(--pink);font-style:italic;}
@@ -39,8 +31,6 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 7
 .nav-links a:hover::after{width:100%;}
 .nav-cta{background:var(--pink)!important;color:white!important;padding:10px 22px!important;border-radius:50px;letter-spacing:.5px!important;}
 .nav-cta::after{display:none!important;}
-
-/* HERO */
 .hero{min-height:92vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:60px 7%;background:linear-gradient(135deg,#fff0f9 0%,#ffffff 50%,#fce7f3 100%);position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(236,72,153,.12) 0%,transparent 70%);border-radius:50%;animation:pulse-glow 4s ease-in-out infinite;}
 .hero::after{content:'';position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(249,168,212,.15) 0%,transparent 70%);border-radius:50%;animation:pulse-glow 5s ease-in-out infinite reverse;}
@@ -57,8 +47,6 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 7
 .btn-black:hover{box-shadow:0 8px 30px rgba(0,0,0,.3);}
 .btn-pink{background:var(--pink);color:white;box-shadow:0 4px 20px rgba(236,72,153,.3);}
 .btn-pink:hover{box-shadow:0 8px 30px rgba(236,72,153,.5);}
-
-/* HAND + COLOR PICKER */
 .hero-visual{display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;z-index:2;animation:fade-up .8s ease forwards;gap:24px;}
 .hand-container{display:flex;justify-content:center;align-items:flex-end;gap:14px;height:260px;background:linear-gradient(to bottom,#fff1f2,#fce7f3);border:3px solid var(--black);padding:25px 30px;border-radius:30px;box-shadow:8px 8px 0px var(--pink);position:relative;overflow:hidden;}
 .hand-container::before{content:"✨";position:absolute;top:10px;left:20px;font-size:24px;animation:floatSparkle 3s infinite ease-in-out;}
@@ -81,14 +69,10 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 7
 .apply-color-btn{flex:1;padding:8px 14px;background:var(--pink);color:white;border:none;border-radius:50px;font-size:12px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .2s;}
 .apply-color-btn:hover{background:#d1397f;}
 @keyframes fade-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-
-/* STATS */
 .stats-bar{background:var(--black);padding:25px 7%;display:flex;justify-content:space-around;align-items:center;flex-wrap:wrap;gap:20px;}
 .stat{text-align:center;color:white;}
 .stat-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;color:var(--pink-light);display:block;}
 .stat-label{font-size:12px;letter-spacing:1px;opacity:.7;text-transform:uppercase;}
-
-/* SHARED */
 .section-label{display:inline-block;background:var(--pink-pale);color:var(--pink);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:7px 14px;border-radius:50px;margin-bottom:12px;}
 .section-title{font-family:'Playfair Display',serif;font-size:46px;font-weight:900;line-height:1.1;margin-bottom:10px;}
 .section-sub{color:var(--gray);font-size:16px;margin-bottom:40px;line-height:1.6;}
@@ -98,14 +82,21 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 7
 .examples-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;margin-top:10px;}
 .example-card{border-radius:24px;overflow:hidden;background:white;border:2px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,.06);transition:transform .25s,box-shadow .25s;position:relative;cursor:pointer;}
 .example-card:hover{transform:translateY(-7px);box-shadow:0 16px 40px rgba(236,72,153,.18);border-color:var(--pink-light);}
-.example-img-wrap{position:relative;height:240px;overflow:hidden;background:linear-gradient(135deg,#fce7f3,#fff0f9);}
-.example-img-wrap img{width:100%;height:100%;object-fit:cover;}
+/* FIX: reduced height, contain not cover so images aren't clipped */
+.example-img-wrap{position:relative;height:220px;overflow:hidden;background:linear-gradient(135deg,#fce7f3,#fff0f9);display:flex;align-items:center;justify-content:center;}
+.example-img-wrap img{width:100%;height:100%;object-fit:contain;padding:8px;transition:transform .3s ease;}
+.example-card:hover .example-img-wrap img{transform:scale(1.04);}
 .example-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:60px;}
-.example-badge{position:absolute;top:12px;left:12px;background:var(--black);color:white;font-size:11px;font-weight:800;padding:5px 12px;border-radius:50px;letter-spacing:.5px;}
-.example-tier-badge{position:absolute;top:12px;right:12px;font-size:11px;font-weight:800;padding:5px 12px;border-radius:50px;}
+.example-badge{position:absolute;top:12px;left:12px;background:var(--black);color:white;font-size:11px;font-weight:800;padding:5px 12px;border-radius:50px;letter-spacing:.5px;z-index:2;}
+.example-tier-badge{position:absolute;top:12px;right:12px;font-size:11px;font-weight:800;padding:5px 12px;border-radius:50px;z-index:2;}
 .badge-plain{background:#fce7f3;color:#be185d;}
 .badge-minimal{background:#ede9fe;color:#7c3aed;}
 .badge-max{background:#fef3c7;color:#b45309;}
+/* zoom hint overlay */
+.zoom-hint{position:absolute;inset:0;background:rgba(236,72,153,0);display:flex;align-items:center;justify-content:center;transition:background .3s;z-index:1;}
+.zoom-hint span{opacity:0;transform:scale(.7);transition:opacity .25s,transform .25s;background:white;color:var(--pink);font-size:13px;font-weight:800;padding:10px 20px;border-radius:50px;box-shadow:0 4px 20px rgba(0,0,0,.2);}
+.example-card:hover .zoom-hint{background:rgba(236,72,153,.15);}
+.example-card:hover .zoom-hint span{opacity:1;transform:scale(1);}
 .example-info{padding:16px 18px;display:flex;justify-content:space-between;align-items:center;}
 .example-info-text h4{font-weight:800;font-size:15px;margin-bottom:2px;}
 .example-info-text span{font-size:13px;color:var(--gray);}
@@ -126,12 +117,17 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 7
 .nail-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;}
 .nail-card{border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.07);border:2px solid var(--border);transition:transform .25s,box-shadow .25s;background:white;cursor:pointer;position:relative;}
 .nail-card:hover{transform:translateY(-6px);box-shadow:0 12px 35px rgba(236,72,153,.18);border-color:var(--pink-light);}
-.nail-card img{width:100%;height:240px;object-fit:cover;display:block;}
-.nail-img-placeholder{width:100%;height:240px;display:flex;align-items:center;justify-content:center;font-size:50px;background:linear-gradient(135deg,#fce7f3,#fff0f9);}
+/* FIX: contain so images aren't clipped/zoomed */
+.nail-card-img{width:100%;height:210px;object-fit:contain;display:block;padding:10px;background:linear-gradient(135deg,#fce7f3,#fff0f9);transition:transform .3s ease;}
+.nail-card:hover .nail-card-img{transform:scale(1.04);}
+.nail-img-placeholder{width:100%;height:210px;display:flex;align-items:center;justify-content:center;font-size:50px;background:linear-gradient(135deg,#fce7f3,#fff0f9);}
 .nail-card-info{padding:14px 16px;display:flex;justify-content:space-between;align-items:center;}
 .nail-card-info span{font-weight:600;font-size:14px;color:var(--gray);}
-.nail-card::after{content:'💅 Order This Look';position:absolute;bottom:60px;left:50%;transform:translateX(-50%) translateY(10px);background:var(--pink);color:white;padding:8px 16px;border-radius:50px;font-size:12px;font-weight:800;white-space:nowrap;opacity:0;transition:opacity .2s,transform .2s;pointer-events:none;}
-.nail-card:hover::after{opacity:1;transform:translateX(-50%) translateY(0);}
+/* zoom overlay on nail cards */
+.nail-zoom-hint{position:absolute;top:0;left:0;right:0;height:210px;background:rgba(236,72,153,0);display:flex;align-items:center;justify-content:center;transition:background .3s;z-index:1;pointer-events:none;}
+.nail-zoom-hint span{opacity:0;transform:scale(.7);transition:opacity .25s,transform .25s;background:white;color:var(--pink);font-size:12px;font-weight:800;padding:8px 16px;border-radius:50px;box-shadow:0 4px 20px rgba(0,0,0,.2);}
+.nail-card:hover .nail-zoom-hint{background:rgba(236,72,153,.12);}
+.nail-card:hover .nail-zoom-hint span{opacity:1;transform:scale(1);}
 
 /* HOW IT WORKS */
 .how-it-works{padding:90px 7%;background:var(--black);color:white;}
@@ -146,7 +142,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 7
 .step p{color:rgba(255,255,255,.55);font-size:14px;line-height:1.6;}
 .step-num{display:inline-block;width:28px;height:28px;background:var(--pink);color:white;border-radius:50%;font-size:13px;font-weight:900;line-height:28px;text-align:center;margin-bottom:15px;}
 
-/* ====== SIZING GUIDE SECTION ====== */
+/* SIZING */
 .sizing-section{padding:90px 7%;background:linear-gradient(135deg,#fffafd,#fff0f9);}
 .sizing-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start;margin-top:40px;}
 .sizing-method{background:white;border:2px solid var(--border);border-radius:24px;padding:32px;box-shadow:0 8px 30px rgba(236,72,153,.08);transition:transform .2s,box-shadow .2s;}
@@ -173,7 +169,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 7
 .size-chart tr:hover td{background:var(--pink-ultra);}
 .size-num{display:inline-block;background:var(--pink-pale);color:var(--pink);font-weight:800;font-size:12px;padding:2px 8px;border-radius:20px;}
 
-/* ORDER SECTION */
+/* ORDER */
 .order-section{padding:90px 7%;background:linear-gradient(135deg,#fff0f9,#ffffff,#fce7f3);position:relative;}
 .order-section::before{content:'💅';position:absolute;font-size:200px;opacity:.04;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
 .form-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;max-width:1000px;margin:auto;}
@@ -195,7 +191,7 @@ textarea{height:110px;resize:none;}
 select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px;}
 .custom-file-upload{display:flex;align-items:center;gap:12px;width:100%;padding:14px 16px;margin-bottom:14px;border:2px dashed var(--pink);background:var(--pink-ultra);font-weight:700;font-size:14px;cursor:pointer;border-radius:14px;transition:all .2s;color:var(--pink);}
 .custom-file-upload:hover{background:var(--pink-pale);transform:scale(1.01);}
-#previewImage{display:none;width:100%;border-radius:14px;margin-bottom:14px;max-height:200px;object-fit:cover;border:2px solid var(--border);}
+#previewImage{display:none;width:100%;border-radius:14px;margin-bottom:14px;max-height:200px;object-fit:contain;border:2px solid var(--border);}
 .submit-btn{width:100%;padding:16px;background:var(--pink);color:white;border:none;border-radius:50px;font-size:15px;font-weight:900;letter-spacing:1px;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(236,72,153,.3);}
 .submit-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(236,72,153,.5);}
 .submit-btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
@@ -212,7 +208,7 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
 .review-name{font-weight:800;font-size:13px;}
 .review-date{font-size:11px;color:var(--gray);}
 .review-badge{position:absolute;top:14px;right:14px;font-size:11px;font-weight:800;background:var(--pink-pale);color:var(--pink);padding:4px 10px;border-radius:50px;}
-.review-img{width:100%;height:180px;object-fit:cover;border-radius:12px;margin-bottom:12px;border:2px solid var(--border);}
+.review-img{width:100%;height:160px;object-fit:contain;border-radius:12px;margin-bottom:12px;border:2px solid var(--border);cursor:pointer;background:#fffafd;}
 .reviews-loading{text-align:center;padding:40px;color:var(--gray);font-size:15px;}
 .write-review{background:white;border:2px solid var(--border);border-radius:28px;padding:40px;max-width:650px;margin:0 auto;box-shadow:0 10px 40px rgba(236,72,153,.08);}
 .write-review h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;margin-bottom:8px;}
@@ -223,19 +219,35 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
 .review-submit-btn{width:100%;padding:14px;background:var(--black);color:white;border:none;border-radius:50px;font-size:14px;font-weight:900;letter-spacing:1px;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .2s;}
 .review-submit-btn:hover{background:var(--pink);}
 .review-submit-btn:disabled{opacity:.6;cursor:not-allowed;}
-.no-reviews{text-align:center;color:var(--gray);font-size:15px;padding:40px;opacity:.6;}
 
-/* LIGHTBOX */
-.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s;}
+/* LIGHTBOX — fixed & working */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:99999;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s;}
 .lightbox.open{opacity:1;pointer-events:all;}
-.lightbox-inner{background:white;border-radius:28px;overflow:hidden;max-width:480px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,.4);transform:scale(.9);transition:transform .3s cubic-bezier(.34,1.56,.64,1);position:relative;}
-.lightbox.open .lightbox-inner{transform:scale(1);}
-.lightbox-inner img{width:100%;max-height:500px;object-fit:cover;display:block;}
-.lightbox-info{padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;}
-.lightbox-info h4{font-weight:800;font-size:16px;}
-.lightbox-info span{color:var(--gray);font-size:13px;}
-.lightbox-close{position:absolute;top:14px;right:14px;width:36px;height:36px;background:white;border:none;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.2);transition:background .2s;}
-.lightbox-close:hover{background:var(--pink-pale);}
+.lightbox-inner{background:white;border-radius:28px;overflow:hidden;max-width:520px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,.5);transform:scale(.88) translateY(20px);transition:transform .35s cubic-bezier(.34,1.56,.64,1);position:relative;}
+.lightbox.open .lightbox-inner{transform:scale(1) translateY(0);}
+.lightbox-img-area{background:linear-gradient(135deg,#fce7f3,#fff0f9);display:flex;align-items:center;justify-content:center;padding:20px;min-height:300px;}
+.lightbox-img-area img{max-width:100%;max-height:460px;object-fit:contain;display:block;border-radius:12px;}
+.lightbox-placeholder-big{font-size:100px;text-align:center;padding:40px;}
+.lightbox-info{padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--border);}
+.lightbox-info-text h4{font-weight:800;font-size:16px;margin-bottom:2px;}
+.lightbox-info-text span{color:var(--gray);font-size:13px;}
+.lightbox-close{position:absolute;top:14px;right:14px;width:38px;height:38px;background:white;border:none;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.25);transition:background .2s,transform .2s;z-index:2;}
+.lightbox-close:hover{background:var(--pink-pale);transform:rotate(90deg);}
+.lightbox-tier-pill{position:absolute;top:14px;left:14px;font-size:11px;font-weight:800;padding:5px 12px;border-radius:50px;z-index:2;}
+
+/* REFUND / CONTACT pages */
+.simple-page{padding:80px 7%;max-width:800px;}
+.simple-page h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:900;margin-bottom:16px;}
+.simple-page h1 em{font-style:italic;color:var(--pink);}
+.simple-page p{color:var(--gray);font-size:15px;line-height:1.8;margin-bottom:16px;}
+.simple-page h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;margin:28px 0 10px;}
+.contact-card{background:white;border:2px solid var(--border);border-radius:22px;padding:30px;box-shadow:0 6px 28px rgba(236,72,153,.08);margin-top:30px;}
+.contact-row{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--border);}
+.contact-row:last-child{border-bottom:none;}
+.contact-icon{width:42px;height:42px;background:var(--pink-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.contact-row strong{display:block;font-size:14px;font-weight:800;margin-bottom:2px;}
+.contact-row span,.contact-row a{color:var(--gray);font-size:13px;text-decoration:none;}
+.contact-row a:hover{color:var(--pink);}
 
 /* FOOTER */
 footer{background:var(--black);color:white;padding:70px 7% 40px;}
@@ -254,7 +266,19 @@ footer ul li a:hover{color:var(--pink);}
 .footer-bottom p{color:rgba(255,255,255,.35);font-size:13px;}
 .footer-hearts{color:var(--pink);font-size:18px;}
 
-/* SCROLL REVEAL */
+/* MODAL PAGES (refund, contact shown as overlay) */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:99998;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s;}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.modal-box{background:white;border-radius:28px;max-width:600px;width:100%;max-height:80vh;overflow-y:auto;padding:40px;box-shadow:0 30px 80px rgba(0,0,0,.3);transform:scale(.9) translateY(20px);transition:transform .35s cubic-bezier(.34,1.56,.64,1);position:relative;}
+.modal-overlay.open .modal-box{transform:scale(1) translateY(0);}
+.modal-close{position:absolute;top:18px;right:18px;width:36px;height:36px;background:var(--pink-pale);border:none;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s;}
+.modal-close:hover{background:var(--pink-light);transform:rotate(90deg);}
+.modal-box h2{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;margin-bottom:16px;padding-right:40px;}
+.modal-box h2 em{font-style:italic;color:var(--pink);}
+.modal-box p{color:var(--gray);font-size:14px;line-height:1.8;margin-bottom:12px;}
+.modal-box h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:900;margin:20px 0 8px;}
+
+/* REVEAL */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 .reveal-delay-1{transition-delay:.1s;}
@@ -263,10 +287,9 @@ footer ul li a:hover{color:var(--pink);}
 .reveal-delay-4{transition-delay:.4s;}
 
 /* TOAST */
-.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--black);color:white;padding:16px 28px;border-radius:50px;font-weight:700;font-size:14px;z-index:99999;border:2px solid var(--pink);transition:transform .4s cubic-bezier(.34,1.56,.64,1);white-space:nowrap;}
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--black);color:white;padding:16px 28px;border-radius:50px;font-weight:700;font-size:14px;z-index:999999;border:2px solid var(--pink);transition:transform .4s cubic-bezier(.34,1.56,.64,1);white-space:nowrap;}
 .toast.show{transform:translateX(-50%) translateY(0);}
 
-/* RESPONSIVE */
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;padding:50px 5%;min-height:auto;gap:40px;}
   .hero-text h1{font-size:44px;}
@@ -291,15 +314,70 @@ footer ul li a:hover{color:var(--pink);}
 <div class="cursor-ring" id="cursorRing"></div>
 <div class="toast" id="toast"></div>
 
-<!-- LIGHTBOX -->
+<!-- ======= LIGHTBOX ======= -->
 <div class="lightbox" id="lightbox">
   <div class="lightbox-inner">
-    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-    <img id="lightboxImg" src="" alt="">
-    <div class="lightbox-info">
-      <div><h4 id="lightboxTitle"></h4><span id="lightboxTier"></span></div>
-      <a href="#order" class="order-this" onclick="closeLightbox()">Order This</a>
+    <button class="lightbox-close" id="lightboxCloseBtn">✕</button>
+    <span class="lightbox-tier-pill" id="lightboxTierPill"></span>
+    <div class="lightbox-img-area" id="lightboxImgArea">
+      <img id="lightboxImg" src="" alt="" style="display:none">
+      <div class="lightbox-placeholder-big" id="lightboxEmoji" style="display:none"></div>
     </div>
+    <div class="lightbox-info">
+      <div class="lightbox-info-text">
+        <h4 id="lightboxTitle"></h4>
+        <span id="lightboxSub"></span>
+      </div>
+      <a href="#order" class="order-this" id="lightboxOrderBtn">Order This 💅</a>
+    </div>
+  </div>
+</div>
+
+<!-- ======= REFUND MODAL ======= -->
+<div class="modal-overlay" id="refundModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('refundModal')">✕</button>
+    <h2>Refund <em>Policy</em></h2>
+    <p>Every SetsByRube set is handmade to order just for you. Because each set is completely custom, we are unable to offer refunds once production has started.</p>
+    <h3>If there's a problem with your order:</h3>
+    <p>If your nails arrive damaged, incorrect, or there was a mistake on our end, please reach out within <strong>7 days</strong> of receiving your order. We'll make it right — whether that's a replacement or a solution that works for you.</p>
+    <h3>What we can't refund:</h3>
+    <p>We can't offer refunds for change of mind, incorrect sizing provided by the customer, or sets that have been used/applied. Please measure carefully and follow the sizing guide!</p>
+    <h3>Shipping issues:</h3>
+    <p>If your order is lost in the mail, contact us on Instagram and we'll investigate with the carrier and work out a solution.</p>
+    <p style="margin-top:20px;background:var(--pink-ultra);border-radius:14px;padding:16px;border:2px solid var(--pink-pale);font-size:13px;color:var(--black);font-weight:600;">Questions? Slide into our DMs on Instagram <a href="https://instagram.com/setsbyrubes" target="_blank" style="color:var(--pink);">@setsbyrubes</a> — we're always happy to help 💖</p>
+  </div>
+</div>
+
+<!-- ======= CONTACT MODAL ======= -->
+<div class="modal-overlay" id="contactModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('contactModal')">✕</button>
+    <h2>Get In <em>Touch</em></h2>
+    <p>Have questions about your order, sizing, or just want to say hi? Reach out — we'd love to hear from you! 💖</p>
+    <div class="contact-card">
+      <div class="contact-row">
+        <div class="contact-icon">👩‍🎨</div>
+        <div><strong>Your Nail Artist</strong><span>Ruby (Rube) — SetsByRube</span></div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">📸</div>
+        <div><strong>Instagram (fastest response!)</strong><a href="https://instagram.com/setsbyrubes" target="_blank">@setsbyrubes</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">📧</div>
+        <div><strong>Email</strong><a href="mailto:setsbyrubes@gmail.com">setsbyrubes@gmail.com</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">⏱️</div>
+        <div><strong>Response Time</strong><span>Usually within 24 hours via Instagram DM</span></div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">📦</div>
+        <div><strong>Order Questions</strong><span>Please include your order name + details when reaching out!</span></div>
+      </div>
+    </div>
+    <p style="margin-top:20px;font-size:13px;color:var(--gray);">The quickest way to reach us is always Instagram — DMs are open! 💅</p>
   </div>
 </div>
 
@@ -312,9 +390,9 @@ footer ul li a:hover{color:var(--pink);}
 <nav>
   <a class="logo" href="#">Sets<span>ByRube</span></a>
   <div class="nav-links">
-    <a href="#examples">Examples</a>
+    <a href="#examples">Gallery</a>
     <a href="#catalog">Catalog</a>
-    <a href="#sizing">Sizing Guide</a>
+    <a href="#sizing">Sizing</a>
     <a href="https://instagram.com/setsbyrubes" target="_blank">Instagram</a>
     <a href="#order" class="nav-cta">Order Now 💅</a>
   </div>
@@ -332,7 +410,7 @@ footer ul li a:hover{color:var(--pink);}
     </div>
   </div>
   <div class="hero-visual">
-    <div class="hand-container" id="handDisplay">
+    <div class="hand-container">
       <div class="finger thumb"><div class="nail" id="nail-thumb"></div></div>
       <div class="finger index"><div class="nail" id="nail-index"></div></div>
       <div class="finger middle"><div class="nail" id="nail-middle"></div></div>
@@ -359,60 +437,64 @@ footer ul li a:hover{color:var(--pink);}
   <div class="stat"><span class="stat-num">💌</span><span class="stat-label">Order via DM or Online!</span></div>
 </div>
 
-<!-- FEATURED EXAMPLES -->
+<!-- GALLERY -->
 <section class="examples-section" id="examples">
   <div class="reveal">
     <span class="section-label">💅 Inspo Gallery</span>
     <h2 class="section-title">Featured Looks</h2>
-    <p class="section-sub">Real sets made by SetsByRube — click any look to order something similar.</p>
+    <p class="section-sub">Real sets made by SetsByRube — click any photo to zoom in!</p>
   </div>
   <div class="examples-grid">
-    <div class="example-card reveal" onclick="goOrder('Plain Solid Set ($8)')">
+    <div class="example-card reveal" onclick="openLightbox('nail_plain1.png','💅','Classic White Coffin','Plain Set — $8','Plain $8','badge-plain')">
       <div class="example-img-wrap">
         <img src="nail_plain1.png" alt="White Coffin Set" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="example-placeholder" style="display:none">💅</div>
+        <div class="zoom-hint"><span>🔍 Tap to Zoom</span></div>
         <span class="example-badge">⭐ Fan Fave</span>
         <span class="example-tier-badge badge-plain">Plain $8</span>
       </div>
       <div class="example-info">
         <div class="example-info-text"><h4>Classic White Coffin</h4><span>Clean, minimal, iconic</span></div>
-        <a href="#order" class="order-this">Order</a>
+        <a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a>
       </div>
     </div>
-    <div class="example-card reveal reveal-delay-1" onclick="goOrder('Minimal Design ($16)')">
+    <div class="example-card reveal reveal-delay-1" onclick="openLightbox('nail_min1.png','⭐','Gold Stars Round','Minimal Design — $16','Minimal $16','badge-minimal')">
       <div class="example-img-wrap">
         <img src="nail_min1.png" alt="Gold Stars" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="example-placeholder" style="display:none">⭐</div>
+        <div class="zoom-hint"><span>🔍 Tap to Zoom</span></div>
         <span class="example-badge">✨ Trending</span>
         <span class="example-tier-badge badge-minimal">Minimal $16</span>
       </div>
       <div class="example-info">
         <div class="example-info-text"><h4>Gold Stars Round</h4><span>Subtle sparkle energy</span></div>
-        <a href="#order" class="order-this">Order</a>
+        <a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a>
       </div>
     </div>
-    <div class="example-card reveal reveal-delay-2" onclick="goOrder('Maximum Design ($25)')">
+    <div class="example-card reveal reveal-delay-2" onclick="openLightbox('nail_max1.png','🌸','Red Floral Almond','Maximum Design — $25','Max $25','badge-max')">
       <div class="example-img-wrap">
         <img src="nail_max1.png" alt="Red Floral" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="example-placeholder" style="display:none">🌸</div>
+        <div class="zoom-hint"><span>🔍 Tap to Zoom</span></div>
         <span class="example-badge">🔥 Best Seller</span>
         <span class="example-tier-badge badge-max">Max $25</span>
       </div>
       <div class="example-info">
         <div class="example-info-text"><h4>Red Floral Almond</h4><span>Full luxury art set</span></div>
-        <a href="#order" class="order-this">Order</a>
+        <a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a>
       </div>
     </div>
-    <div class="example-card reveal reveal-delay-3" onclick="goOrder('Maximum Design ($25)')">
+    <div class="example-card reveal reveal-delay-3" onclick="openLightbox('nail_max3.png','🍒','Cherry Leopard Coffin','Maximum Design — $25','Max $25','badge-max')">
       <div class="example-img-wrap">
         <img src="nail_max3.png" alt="Cherry Leopard" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="example-placeholder" style="display:none">🍒</div>
+        <div class="zoom-hint"><span>🔍 Tap to Zoom</span></div>
         <span class="example-badge">💖 New</span>
         <span class="example-tier-badge badge-max">Max $25</span>
       </div>
       <div class="example-info">
         <div class="example-info-text"><h4>Cherry Leopard Coffin</h4><span>Bold & unforgettable</span></div>
-        <a href="#order" class="order-this">Order</a>
+        <a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a>
       </div>
     </div>
   </div>
@@ -437,11 +519,36 @@ footer ul li a:hover{color:var(--pink);}
       <div class="tier-price">$8</div>
     </div>
     <div class="nail-grid">
-      <div class="nail-card reveal" onclick="goOrder('Plain Solid Set ($8)')"><img src="nail_plain1.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="nail-img-placeholder" style="display:none">💅</div><div class="nail-card-info"><span>White / Coffin</span><a href="#order" class="order-this">Order</a></div></div>
-      <div class="nail-card reveal reveal-delay-1" onclick="goOrder('Plain Solid Set ($8)')"><img src="nail_plain2.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="nail-img-placeholder" style="display:none">🩷</div><div class="nail-card-info"><span>Baby Pink / Almond</span><a href="#order" class="order-this">Order</a></div></div>
-      <div class="nail-card reveal reveal-delay-2" onclick="goOrder('Plain Solid Set ($8)')"><img src="nail_plain3.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="nail-img-placeholder" style="display:none">🤍</div><div class="nail-card-info"><span>Nude / Almond</span><a href="#order" class="order-this">Order</a></div></div>
-      <div class="nail-card reveal reveal-delay-3" onclick="goOrder('Plain Solid Set ($8)')"><img src="nail_plain4.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="nail-img-placeholder" style="display:none">🍼</div><div class="nail-card-info"><span>Milky White / Almond</span><a href="#order" class="order-this">Order</a></div></div>
-      <div class="nail-card reveal reveal-delay-4" onclick="goOrder('Plain Solid Set ($8)')"><img src="nail_plain5.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="nail-img-placeholder" style="display:none">🫧</div><div class="nail-card-info"><span>Nude Beige / Square</span><a href="#order" class="order-this">Order</a></div></div>
+      <div class="nail-card reveal" onclick="openLightbox('nail_plain1.png','💅','White Coffin','Plain Set — $8','Plain $8','badge-plain')">
+        <img class="nail-card-img" src="nail_plain1.png" alt="White Coffin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="nail-img-placeholder" style="display:none">💅</div>
+        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
+        <div class="nail-card-info"><span>White / Coffin</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+      <div class="nail-card reveal reveal-delay-1" onclick="openLightbox('nail_plain2.png','🩷','Baby Pink Almond','Plain Set — $8','Plain $8','badge-plain')">
+        <img class="nail-card-img" src="nail_plain2.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="nail-img-placeholder" style="display:none">🩷</div>
+        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
+        <div class="nail-card-info"><span>Baby Pink / Almond</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+      <div class="nail-card reveal reveal-delay-2" onclick="openLightbox('nail_plain3.png','🤍','Nude Almond','Plain Set — $8','Plain $8','badge-plain')">
+        <img class="nail-card-img" src="nail_plain3.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="nail-img-placeholder" style="display:none">🤍</div>
+        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
+        <div class="nail-card-info"><span>Nude / Almond</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+      <div class="nail-card reveal reveal-delay-3" onclick="openLightbox('nail_plain4.png','🍼','Milky White Almond','Plain Set — $8','Plain $8','badge-plain')">
+        <img class="nail-card-img" src="nail_plain4.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="nail-img-placeholder" style="display:none">🍼</div>
+        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
+        <div class="nail-card-info"><span>Milky White / Almond</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+      <div class="nail-card reveal reveal-delay-4" onclick="openLightbox('nail_plain5.png','🫧','Nude Beige Square','Plain Set — $8','Plain $8','badge-plain')">
+        <img class="nail-card-img" src="nail_plain5.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="nail-img-placeholder" style="display:none">🫧</div>
+        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
+        <div class="nail-card-info"><span>Nude Beige / Square</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
     </div>
   </div>
 
@@ -451,11 +558,36 @@ footer ul li a:hover{color:var(--pink);}
       <div class="tier-price">$16</div>
     </div>
     <div class="nail-grid">
-      <div class="nail-card reveal" onclick="goOrder('Minimal Design ($16)')"><img src="nail_min1.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="nail-img-placeholder" style="display:none">⭐</div><div class="nail-card-info"><span>Gold Stars / Round</span><a href="#order" class="order-this">Order</a></div></div>
-      <div class="nail-card reveal reveal-delay-1" onclick="goOrder('Minimal Design ($16)')"><img src="nail_min2.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="nail-img-placeholder" style="display:none">🍓</div><div class="nail-card-info"><span>Strawberry / Square</span><a href="#order" class="order-this">Order</a></div></div>
-      <div class="nail-card reveal reveal-delay-2" onclick="goOrder('Minimal Design ($16)')"><img src="nail_min3.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="nail-img-placeholder" style="display:none">🔵</div><div class="nail-card-info"><span>Color Dots / Round</span><a href="#order" class="order-this">Order</a></div></div>
-      <div class="nail-card reveal reveal-delay-3" onclick="goOrder('Minimal Design ($16)')"><img src="nail_min4.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="nail-img-placeholder" style="display:none">💗</div><div class="nail-card-info"><span>Heart Detail / Square</span><a href="#order" class="order-this">Order</a></div></div>
-      <div class="nail-card reveal reveal-delay-4" onclick="goOrder('Minimal Design ($16)')"><img src="nail_min5.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="nail-img-placeholder" style="display:none">🌸</div><div class="nail-card-info"><span>Mini Flowers / Round</span><a href="#order" class="order-this">Order</a></div></div>
+      <div class="nail-card reveal" onclick="openLightbox('nail_min1.png','⭐','Gold Stars Round','Minimal Design — $16','Minimal $16','badge-minimal')">
+        <img class="nail-card-img" src="nail_min1.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="nail-img-placeholder" style="display:none">⭐</div>
+        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
+        <div class="nail-card-info"><span>Gold Stars / Round</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+      <div class="nail-card reveal reveal-delay-1" onclick="openLightbox('nail_min2.png','🍓','Strawberry Square','Minimal Design — $16','Minimal $16','badge-minimal')">
+        <img class="nail-card-img" src="nail_min2.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="nail-img-placeholder" style="display:none">🍓</div>
+        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
+        <div class="nail-card-info"><span>Strawberry / Square</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+      <div class="nail-card reveal reveal-delay-2" onclick="openLightbox('nail_min3.png','🔵','Color Dots Round','Minimal Design — $16','Minimal $16','badge-minimal')">
+        <img class="nail-card-img" src="nail_min3.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="nail-img-placeholder" style="display:none">🔵</div>
+        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
+        <div class="nail-card-info"><span>Color Dots / Round</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+      <div class="nail-card reveal reveal-delay-3" onclick="openLightbox('nail_min4.png','💗','Heart Detail Square','Minimal Design — $16','Minimal $16','badge-minimal')">
+        <img class="nail-card-img" src="nail_min4.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="nail-img-placeholder" style="display:none">💗</div>
+        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
+        <div class="nail-card-info"><span>Heart Detail / Square</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+      <div class="nail-card reveal reveal-delay-4" onclick="openLightbox('nail_min5.png','🌸','Mini Flowers Round','Minimal Design — $16','Minimal $16','badge-minimal')">
+        <img class="nail-card-img" src="nail_min5.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="nail-img-placeholder" style="display:none">🌸</div>
+        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
+        <div class="nail-card-info"><span>Mini Flowers / Round</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
     </div>
   </div>
 
@@ -465,12 +597,42 @@ footer ul li a:hover{color:var(--pink);}
       <div class="tier-price">$25</div>
     </div>
     <div class="nail-grid">
-      <div class="nail-card reveal" onclick="goOrder('Maximum Design ($25)')"><img src="nail_max1.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="nail-img-placeholder" style="display:none">🌹</div><div class="nail-card-info"><span>Red Floral / Almond</span><a href="#order" class="order-this">Order</a></div></div>
-      <div class="nail-card reveal reveal-delay-1" onclick="goOrder('Maximum Design ($25)')"><img src="nail_max2.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="nail-img-placeholder" style="display:none">🌻</div><div class="nail-card-info"><span>Yellow Daisy / Coffin</span><a href="#order" class="order-this">Order</a></div></div>
-      <div class="nail-card reveal reveal-delay-2" onclick="goOrder('Maximum Design ($25)')"><img src="nail_max3.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="nail-img-placeholder" style="display:none">🍒</div><div class="nail-card-info"><span>Cherry Leopard / Coffin</span><a href="#order" class="order-this">Order</a></div></div>
-      <div class="nail-card reveal reveal-delay-3" onclick="goOrder('Maximum Design ($25)')"><img src="nail_max4.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="nail-img-placeholder" style="display:none">✨</div><div class="nail-card-info"><span>Burgundy Gold / Coffin</span><a href="#order" class="order-this">Order</a></div></div>
-      <div class="nail-card reveal reveal-delay-4" onclick="goOrder('Maximum Design ($25)')"><img src="nail_max5.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="nail-img-placeholder" style="display:none">🪷</div><div class="nail-card-info"><span>3D Floral / Coffin</span><a href="#order" class="order-this">Order</a></div></div>
-      <div class="nail-card reveal" onclick="goOrder('Maximum Design ($25)')"><img src="nail_max6.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="nail-img-placeholder" style="display:none">🖤</div><div class="nail-card-info"><span>Pink & Black Swirl / Square</span><a href="#order" class="order-this">Order</a></div></div>
+      <div class="nail-card reveal" onclick="openLightbox('nail_max1.png','🌹','Red Floral Almond','Maximum Design — $25','Max $25','badge-max')">
+        <img class="nail-card-img" src="nail_max1.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="nail-img-placeholder" style="display:none">🌹</div>
+        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
+        <div class="nail-card-info"><span>Red Floral / Almond</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+      <div class="nail-card reveal reveal-delay-1" onclick="openLightbox('nail_max2.png','🌻','Yellow Daisy Coffin','Maximum Design — $25','Max $25','badge-max')">
+        <img class="nail-card-img" src="nail_max2.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="nail-img-placeholder" style="display:none">🌻</div>
+        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
+        <div class="nail-card-info"><span>Yellow Daisy / Coffin</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+      <div class="nail-card reveal reveal-delay-2" onclick="openLightbox('nail_max3.png','🍒','Cherry Leopard Coffin','Maximum Design — $25','Max $25','badge-max')">
+        <img class="nail-card-img" src="nail_max3.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="nail-img-placeholder" style="display:none">🍒</div>
+        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
+        <div class="nail-card-info"><span>Cherry Leopard / Coffin</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+      <div class="nail-card reveal reveal-delay-3" onclick="openLightbox('nail_max4.png','✨','Burgundy Gold Coffin','Maximum Design — $25','Max $25','badge-max')">
+        <img class="nail-card-img" src="nail_max4.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="nail-img-placeholder" style="display:none">✨</div>
+        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
+        <div class="nail-card-info"><span>Burgundy Gold / Coffin</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+      <div class="nail-card reveal reveal-delay-4" onclick="openLightbox('nail_max5.png','🪷','3D Floral Coffin','Maximum Design — $25','Max $25','badge-max')">
+        <img class="nail-card-img" src="nail_max5.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="nail-img-placeholder" style="display:none">🪷</div>
+        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
+        <div class="nail-card-info"><span>3D Floral / Coffin</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+      <div class="nail-card reveal" onclick="openLightbox('nail_max6.png','🖤','Pink & Black Swirl Square','Maximum Design — $25','Max $25','badge-max')">
+        <img class="nail-card-img" src="nail_max6.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="nail-img-placeholder" style="display:none">🖤</div>
+        <div class="nail-zoom-hint"><span>🔍 Zoom</span></div>
+        <div class="nail-card-info"><span>Pink & Black Swirl / Square</span><a href="#order" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
     </div>
   </div>
 </section>
@@ -490,49 +652,33 @@ footer ul li a:hover{color:var(--pink);}
   </div>
 </section>
 
-<!-- ====== SIZING GUIDE ====== -->
+<!-- SIZING GUIDE -->
 <section class="sizing-section" id="sizing">
   <div class="reveal" style="text-align:center;">
     <span class="section-label">📏 Get the Perfect Fit</span>
     <h2 class="section-title">How to Size Your Nails</h2>
     <p class="section-sub">No measuring tape needed — just a coin and your phone camera! 🪙</p>
   </div>
-
   <div class="sizing-grid reveal">
-    <!-- METHOD 1: Quarter photo -->
     <div class="sizing-method">
       <span class="sizing-method-icon">🪙</span>
       <h3>The Quarter Method <span style="background:var(--pink);color:white;font-size:11px;padding:3px 10px;border-radius:20px;font-family:'DM Sans',sans-serif;font-weight:800;vertical-align:middle;margin-left:6px;">Recommended</span></h3>
-      <p>The most accurate way to size — takes 30 seconds and gives a perfect fit every time. Just include the photo with your order!</p>
+      <p>The most accurate way to size — takes 30 seconds and gives a perfect fit every time.</p>
       <ul class="sizing-steps">
         <li><span class="step-dot">1</span><span>Place a <strong>quarter (25¢)</strong> flat on a table next to your hand.</span></li>
         <li><span class="step-dot">2</span><span>Spread your fingers flat, palm down, touching the table.</span></li>
         <li><span class="step-dot">3</span><span>Take a <strong>top-down photo</strong> of all 5 fingers next to the quarter.</span></li>
         <li><span class="step-dot">4</span><span>Upload it in the order form below — that's it! ✨</span></li>
       </ul>
-      <div class="quarter-visual">
-        <span class="quarter-emoji">🖐🪙</span>
-        <p>The quarter acts as a reference — Rube measures each nail width from your photo!</p>
-      </div>
-      <div class="sizing-tip">
-        <span class="tip-icon">💡</span>
-        <p><strong>Pro tip:</strong> Good lighting + flat surface = the clearest photo. Natural daylight works best. Don't flex your fingers — keep them totally flat!</p>
-      </div>
+      <div class="quarter-visual"><span class="quarter-emoji">🖐🪙</span><p>The quarter acts as a reference — Rube measures each nail width from your photo!</p></div>
+      <div class="sizing-tip"><span class="tip-icon">💡</span><p><strong>Pro tip:</strong> Good lighting + flat surface = the clearest photo. Natural daylight works best.</p></div>
     </div>
-
-    <!-- METHOD 2: Size chart + string -->
     <div class="sizing-method">
       <span class="sizing-method-icon">📐</span>
       <h3>Size Chart Reference</h3>
-      <p>Already know your sizes? Pick from the chart below and include them in your custom request notes.</p>
+      <p>Already know your sizes? Pick from the chart and include them in your order notes.</p>
       <table class="size-chart">
-        <thead>
-          <tr>
-            <th>Size #</th>
-            <th>Width (mm)</th>
-            <th>Fits</th>
-          </tr>
-        </thead>
+        <thead><tr><th>Size #</th><th>Width (mm)</th><th>Fits</th></tr></thead>
         <tbody>
           <tr><td><span class="size-num">0</span></td><td>18 mm</td><td>XL / Wide thumb</td></tr>
           <tr><td><span class="size-num">1</span></td><td>16 mm</td><td>L thumb / wide index</td></tr>
@@ -544,20 +690,14 @@ footer ul li a:hover{color:var(--pink);}
           <tr><td><span class="size-num">7</span></td><td>10 mm</td><td>Small pinky</td></tr>
         </tbody>
       </table>
-      <div class="sizing-tip" style="margin-top:16px;">
-        <span class="tip-icon">✂️</span>
-        <p><strong>String trick:</strong> Wrap a thin strip of paper around your nail at the widest point. Mark where it meets, then measure that strip flat with a ruler. That's your nail width!</p>
-      </div>
+      <div class="sizing-tip" style="margin-top:16px;"><span class="tip-icon">✂️</span><p><strong>String trick:</strong> Wrap a strip of paper around your nail, mark it, then measure flat with a ruler!</p></div>
       <div style="margin-top:16px;padding:16px;background:var(--pink-ultra);border-radius:14px;border:2px solid var(--pink-pale);">
         <p style="font-size:13px;font-weight:700;color:var(--pink);margin-bottom:6px;">📝 Include in your order notes:</p>
-        <p style="font-size:13px;color:var(--gray);line-height:1.6;">Thumb / Index / Middle / Ring / Pinky<br>e.g. <em style="color:var(--black);">3, 4, 3, 4, 6</em> (right hand)</p>
+        <p style="font-size:13px;color:var(--gray);line-height:1.6;">e.g. <em style="color:var(--black);">Thumb:3, Index:4, Middle:3, Ring:4, Pinky:6</em></p>
       </div>
     </div>
   </div>
-
-  <div class="reveal" style="margin-top:32px;text-align:center;">
-    <a href="#order" class="btn btn-pink">Ready to Order? →</a>
-  </div>
+  <div class="reveal" style="margin-top:32px;text-align:center;"><a href="#order" class="btn btn-pink">Ready to Order? →</a></div>
 </section>
 
 <!-- ORDER FORM -->
@@ -566,7 +706,7 @@ footer ul li a:hover{color:var(--pink);}
     <div class="form-left reveal">
       <span class="section-label">✨ Custom Orders</span>
       <h2>Place Your <em>Order</em></h2>
-      <p>Fill out the form — your details get emailed to SetsByRube AND copied for Instagram DM!</p>
+      <p>Fill out the form — your details get copied for Instagram DM automatically!</p>
       <div class="info-item"><div class="info-icon">💌</div><div class="info-text"><strong>Order via Instagram</strong><span>Your details get sent straight to @setsbyrubes</span></div></div>
       <div class="info-item"><div class="info-icon">✈️</div><div class="info-text"><strong>Shipping Available</strong><span>We ship! Local drop-off also available.</span></div></div>
       <div class="info-item"><div class="info-icon">⏱️</div><div class="info-text"><strong>Made to Order</strong><span>Every set is handmade just for you.</span></div></div>
@@ -577,17 +717,10 @@ footer ul li a:hover{color:var(--pink);}
       <form id="orderForm" name="nail-order" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" onsubmit="handleFormSubmit(event)">
         <input type="hidden" name="form-name" value="nail-order">
         <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
-        <div class="form-group">
-          <label>Your Name</label>
-          <input type="text" name="name" id="name" placeholder="e.g. Sofia" required>
-        </div>
-        <div class="form-group">
-          <label>Your Email (so she can reply!)</label>
-          <input type="email" name="email" id="email" placeholder="your@email.com" required>
-        </div>
+        <div class="form-group"><label>Your Name</label><input type="text" name="name" id="name" placeholder="e.g. Sofia" required></div>
+        <div class="form-group"><label>Your Email (so she can reply!)</label><input type="email" name="email" id="email" placeholder="your@email.com" required></div>
         <div class="form-row">
-          <div class="form-group">
-            <label>Nail Tier</label>
+          <div class="form-group"><label>Nail Tier</label>
             <select name="tier" id="orderType" required>
               <option value="">Choose tier</option>
               <option>Plain Solid Set ($8)</option>
@@ -595,34 +728,25 @@ footer ul li a:hover{color:var(--pink);}
               <option>Maximum Design ($25)</option>
             </select>
           </div>
-          <div class="form-group">
-            <label>Shape</label>
+          <div class="form-group"><label>Shape</label>
             <select name="shape" id="shape" required>
               <option value="">Choose shape</option>
-              <option>Almond — Short</option>
-              <option>Almond — Long</option>
-              <option>Coffin — Short</option>
-              <option>Coffin — Long</option>
-              <option>Square — Short</option>
-              <option>Square — Long</option>
+              <option>Almond — Short</option><option>Almond — Long</option>
+              <option>Coffin — Short</option><option>Coffin — Long</option>
+              <option>Square — Short</option><option>Square — Long</option>
             </select>
           </div>
         </div>
-        <div class="form-group">
-          <label>Delivery Method</label>
+        <div class="form-group"><label>Delivery Method</label>
           <select name="delivery" id="deliveryOpt" required>
             <option value="">Choose delivery</option>
-            <option>Shipping</option>
-            <option>Local Drop-off</option>
+            <option>Shipping</option><option>Local Drop-off</option>
           </select>
         </div>
-        <div class="form-group">
-          <label>Custom Requests / Inspo Description</label>
-          <textarea name="custom_request" id="customRequest" placeholder="Describe your dream nails — colors, vibes, inspo... Include your sizes if you know them! (e.g. Thumb:3, Index:4, Middle:3, Ring:4, Pinky:6)"></textarea>
+        <div class="form-group"><label>Custom Requests / Inspo Description</label>
+          <textarea name="custom_request" id="customRequest" placeholder="Describe your dream nails — colors, vibes, inspo... Include your sizes! (e.g. Thumb:3, Index:4, Middle:3, Ring:4, Pinky:6)"></textarea>
         </div>
-        <label class="custom-file-upload" for="nailInspoPhoto">
-          🪙 Upload inspo photo + hand next to a quarter for sizing!
-        </label>
+        <label class="custom-file-upload" for="nailInspoPhoto">🪙 Upload inspo photo + hand next to a quarter for sizing!</label>
         <input type="file" id="nailInspoPhoto" name="inspo_photo" hidden accept="image/*">
         <img id="previewImage" alt="Preview">
         <button class="submit-btn" type="submit" id="submitBtn">SUBMIT ORDER & COPY FOR INSTAGRAM 💅</button>
@@ -641,31 +765,22 @@ footer ul li a:hover{color:var(--pink);}
   <div class="reviews-grid" id="reviewsGrid">
     <p class="reviews-loading">Loading reviews... 💅</p>
   </div>
-
   <div class="write-review reveal">
     <h3>Leave a Review ✨</h3>
     <p>Loved your set? Let everyone know! You can even attach a photo 📸</p>
-    <div class="star-selector" id="starSelector">
+    <div class="star-selector">
       <button class="star-btn" onclick="setStars(1)">⭐</button>
       <button class="star-btn" onclick="setStars(2)">⭐</button>
       <button class="star-btn" onclick="setStars(3)">⭐</button>
       <button class="star-btn" onclick="setStars(4)">⭐</button>
       <button class="star-btn" onclick="setStars(5)">⭐</button>
     </div>
+    <div class="form-group"><label>Your Name</label><input type="text" id="reviewName" placeholder="e.g. Ashley"></div>
+    <div class="form-group"><label>Your Review</label><textarea id="reviewText" placeholder="Tell everyone about your set! ✨" style="height:90px"></textarea></div>
     <div class="form-group">
-      <label>Your Name</label>
-      <input type="text" id="reviewName" placeholder="e.g. Ashley">
-    </div>
-    <div class="form-group">
-      <label>Your Review</label>
-      <textarea id="reviewText" placeholder="Tell everyone about your set! ✨" style="height:90px"></textarea>
-    </div>
-    <div class="form-group">
-      <label class="custom-file-upload" for="reviewPhoto" style="margin-bottom:0;">
-        📸 Attach a photo of your nails (optional!)
-      </label>
+      <label class="custom-file-upload" for="reviewPhoto" style="margin-bottom:0;">📸 Attach a photo of your nails (optional!)</label>
       <input type="file" id="reviewPhoto" hidden accept="image/*">
-      <img id="reviewPhotoPreview" style="display:none;width:100%;border-radius:12px;margin-top:10px;max-height:180px;object-fit:cover;border:2px solid var(--border);" alt="Review preview">
+      <img id="reviewPhotoPreview" style="display:none;width:100%;border-radius:12px;margin-top:10px;max-height:180px;object-fit:contain;border:2px solid var(--border);background:#fffafd;" alt="">
     </div>
     <button class="review-submit-btn" id="reviewSubmitBtn" onclick="submitReview()">Post Review 💅</button>
   </div>
@@ -691,10 +806,10 @@ footer ul li a:hover{color:var(--pink);}
     <div>
       <h4>Info</h4>
       <ul>
-        <li><a href="#">Shipping</a></li>
+        <li><a href="#" onclick="openModal('refundModal');return false;">Refund Policy</a></li>
         <li><a href="#sizing">Sizing Guide</a></li>
-        <li><a href="#">Refund Policy</a></li>
-        <li><a href="https://instagram.com/setsbyrubes" target="_blank">Contact</a></li>
+        <li><a href="#" onclick="openModal('contactModal');return false;">Contact Us</a></li>
+        <li><a href="https://instagram.com/setsbyrubes" target="_blank">@setsbyrubes</a></li>
       </ul>
     </div>
   </div>
@@ -704,7 +819,7 @@ footer ul li a:hover{color:var(--pink);}
   </div>
 </footer>
 
-<!-- FIREBASE SDK (modular via CDN compat) -->
+<!-- FIREBASE -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getFirestore, collection, addDoc, getDocs, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
@@ -723,289 +838,216 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const storage = getStorage(app);
 
-// ---- SEED REVIEWS (only shown if Firestore is empty) ----
 const SEED_REVIEWS = [
   { name:'Mia R.', stars:5, text:'these nails are literally so gorgeous!! Everyone was asking where I got them. Totally worth it 💖', date:'Feb 2026', emoji:'💅', imageUrl:'' },
   { name:'Jayda K.', stars:5, text:'The quality is insane for the price. My coffin set lasted 3 weeks with no chips. Already ordered my second set!', date:'Apr 2026', emoji:'🌸', imageUrl:'' },
   { name:'Sofia T.', stars:5, text:'She nailed the exact vibe I described from my inspo pic. The communication was so fast and sweet too ✨', date:'Jan 2026', emoji:'⭐', imageUrl:'' },
 ];
 
-// ---- RENDER REVIEWS ----
-async function renderReviews() {
+function escapeHtml(str) {
+  return String(str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function renderReviewCards(list) {
   const grid = document.getElementById('reviewsGrid');
   if (!grid) return;
+  grid.innerHTML = list.map(r => `
+    <div class="review-card">
+      <div class="review-badge">${r.stars||5}/5 ⭐</div>
+      ${r.imageUrl ? `<img class="review-img" src="${escapeHtml(r.imageUrl)}" alt="nail photo" onclick="openLightbox('${escapeHtml(r.imageUrl)}','📸','Customer Photo','Review Photo','Review','badge-plain')">` : ''}
+      <div class="review-stars">${'⭐'.repeat(r.stars||5)}</div>
+      <p class="review-text">"${escapeHtml(r.text)}"</p>
+      <div class="review-author">
+        <div class="review-avatar">${r.emoji||'💅'}</div>
+        <div><div class="review-name">${escapeHtml(r.name)}</div><div class="review-date">${r.date||''}</div></div>
+      </div>
+    </div>`).join('');
+}
+
+async function renderReviews() {
   try {
     const q = query(collection(db, 'reviews'), orderBy('createdAt', 'desc'));
     const snapshot = await getDocs(q);
     const reviews = [];
     snapshot.forEach(doc => reviews.push(doc.data()));
-
-    // Use Firestore reviews OR fall back to seeds
-    const toShow = reviews.length > 0 ? reviews : SEED_REVIEWS;
-
-    grid.innerHTML = toShow.map(r => `
-      <div class="review-card">
-        <div class="review-badge">${r.stars}/5 ⭐</div>
-        ${r.imageUrl ? `<img class="review-img" src="${r.imageUrl}" alt="nail photo">` : ''}
-        <div class="review-stars">${'⭐'.repeat(r.stars || 5)}</div>
-        <p class="review-text">"${escapeHtml(r.text)}"</p>
-        <div class="review-author">
-          <div class="review-avatar">${r.emoji || '💅'}</div>
-          <div>
-            <div class="review-name">${escapeHtml(r.name)}</div>
-            <div class="review-date">${r.date || ''}</div>
-          </div>
-        </div>
-      </div>
-    `).join('');
+    renderReviewCards(reviews.length > 0 ? reviews : SEED_REVIEWS);
   } catch(err) {
-    console.error('Error loading reviews:', err);
-    // Fall back to seeds if Firebase fails
-    grid.innerHTML = SEED_REVIEWS.map(r => `
-      <div class="review-card">
-        <div class="review-badge">${r.stars}/5 ⭐</div>
-        <div class="review-stars">${'⭐'.repeat(r.stars)}</div>
-        <p class="review-text">"${r.text}"</p>
-        <div class="review-author">
-          <div class="review-avatar">${r.emoji}</div>
-          <div><div class="review-name">${r.name}</div><div class="review-date">${r.date}</div></div>
-        </div>
-      </div>
-    `).join('');
+    console.warn('Firebase load failed, using seeds:', err);
+    renderReviewCards(SEED_REVIEWS);
   }
 }
 
-function escapeHtml(str) {
-  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-// ---- SUBMIT REVIEW ----
 window.submitReview = async function() {
-  const name = document.getElementById('reviewName').value.trim();
-  const text = document.getElementById('reviewText').value.trim();
+  const name = (document.getElementById('reviewName').value||'').trim();
+  const text = (document.getElementById('reviewText').value||'').trim();
   const file = document.getElementById('reviewPhoto').files[0];
   const stars = window._selectedStars || 0;
   const btn = document.getElementById('reviewSubmitBtn');
-
   if (!name || !text) { showToast('⚠️ Please add your name and review!'); return; }
   if (!stars) { showToast('⚠️ Please pick a star rating!'); return; }
-
-  btn.disabled = true;
-  btn.textContent = 'Posting... 💫';
-
+  btn.disabled = true; btn.textContent = 'Posting... 💫';
   try {
     let imageUrl = '';
     if (file) {
-      const imgRef = ref(storage, `nail-reviews/${Date.now()}-${file.name}`);
-      const snap = await uploadBytes(imgRef, file);
-      imageUrl = await getDownloadURL(snap.ref);
+      try {
+        const imgRef = ref(storage, `nail-reviews/${Date.now()}-${file.name}`);
+        const snap = await uploadBytes(imgRef, file);
+        imageUrl = await getDownloadURL(snap.ref);
+      } catch(uploadErr) {
+        console.warn('Image upload failed, saving review without image:', uploadErr);
+        showToast('⚠️ Photo upload failed — saving review without image');
+      }
     }
-
     const emojis = ['💅','🌸','✨','💖','⭐','🩷'];
     await addDoc(collection(db, 'reviews'), {
-      name,
-      text,
-      stars,
-      imageUrl,
-      emoji: emojis[Math.floor(Math.random() * emojis.length)],
-      date: new Date().toLocaleDateString('en-US', { month:'short', year:'numeric' }),
+      name, text, stars, imageUrl,
+      emoji: emojis[Math.floor(Math.random()*emojis.length)],
+      date: new Date().toLocaleDateString('en-US',{month:'short',year:'numeric'}),
       createdAt: serverTimestamp()
     });
-
-    // Reset form
     document.getElementById('reviewName').value = '';
     document.getElementById('reviewText').value = '';
     document.getElementById('reviewPhoto').value = '';
     document.getElementById('reviewPhotoPreview').style.display = 'none';
     window._selectedStars = 0;
     document.querySelectorAll('.star-btn').forEach(b => b.classList.remove('lit'));
-
     showToast('💖 Your review is live!');
     await renderReviews();
-    document.getElementById('reviewsGrid').scrollIntoView({ behavior:'smooth', block:'start' });
+    document.getElementById('reviewsGrid').scrollIntoView({behavior:'smooth',block:'start'});
   } catch(err) {
-    console.error('Review error:', err);
-    showToast('❌ Something went wrong. Try again!');
+    console.error('Review save failed:', err);
+    showToast('❌ Could not save review. Check your internet & try again!');
   } finally {
-    btn.disabled = false;
-    btn.textContent = 'Post Review 💅';
+    btn.disabled = false; btn.textContent = 'Post Review 💅';
   }
 };
 
-// Initial load
 renderReviews();
 </script>
 
 <script>
-/* ===== CURSOR ===== */
+/* CURSOR */
 const cursor = document.getElementById('cursor');
 const cursorRing = document.getElementById('cursorRing');
 let mouseX=0,mouseY=0,ringX=0,ringY=0;
-document.addEventListener('mousemove', e => {
-  mouseX = e.clientX; mouseY = e.clientY;
-  cursor.style.left = mouseX+'px'; cursor.style.top = mouseY+'px';
-});
-(function animateRing() {
-  ringX += (mouseX-ringX)*.15; ringY += (mouseY-ringY)*.15;
-  cursorRing.style.left = ringX+'px'; cursorRing.style.top = ringY+'px';
-  requestAnimationFrame(animateRing);
-})();
-document.querySelectorAll('a,button,.nail-card,.tier-tab,.swatch,.example-card').forEach(el => {
-  el.addEventListener('mouseenter', () => cursor.classList.add('big'));
-  el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
+document.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY;cursor.style.left=mouseX+'px';cursor.style.top=mouseY+'px';});
+(function animateRing(){ringX+=(mouseX-ringX)*.15;ringY+=(mouseY-ringY)*.15;cursorRing.style.left=ringX+'px';cursorRing.style.top=ringY+'px';requestAnimationFrame(animateRing);})();
+document.querySelectorAll('a,button,.nail-card,.tier-tab,.swatch,.example-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>cursor.classList.add('big'));
+  el.addEventListener('mouseleave',()=>cursor.classList.remove('big'));
 });
 
-/* ===== SPARKLES ===== */
-const sparkles = ['✨','💅','💖','🌸','⭐','💫'];
-document.addEventListener('click', e => {
-  for (let i=0; i<3; i++) {
-    const s = document.createElement('div');
-    s.className = 'sparkle';
-    s.textContent = sparkles[Math.floor(Math.random()*sparkles.length)];
-    s.style.left = (e.clientX+(Math.random()-.5)*40)+'px';
-    s.style.top  = (e.clientY+(Math.random()-.5)*40)+'px';
-    document.body.appendChild(s);
-    setTimeout(() => s.remove(), 700);
+/* SPARKLES */
+const sparkles=['✨','💅','💖','🌸','⭐','💫'];
+document.addEventListener('click',e=>{
+  for(let i=0;i<3;i++){
+    const s=document.createElement('div');s.className='sparkle';
+    s.textContent=sparkles[Math.floor(Math.random()*sparkles.length)];
+    s.style.left=(e.clientX+(Math.random()-.5)*40)+'px';
+    s.style.top=(e.clientY+(Math.random()-.5)*40)+'px';
+    document.body.appendChild(s);setTimeout(()=>s.remove(),700);
   }
 });
 
-/* ===== COLOR PICKER ===== */
-const palette = [
+/* COLOR PICKER */
+const palette=[
   {hex:'#ec4899',name:'Hot Pink'},{hex:'#f9a8d4',name:'Baby Pink'},{hex:'#fb7185',name:'Coral Rose'},
   {hex:'#f43f5e',name:'Red'},{hex:'#9f1239',name:'Burgundy'},{hex:'#c084fc',name:'Lavender'},
   {hex:'#7c3aed',name:'Purple'},{hex:'#38bdf8',name:'Sky Blue'},{hex:'#0ea5e9',name:'Ocean Blue'},
   {hex:'#34d399',name:'Mint'},{hex:'#fbbf24',name:'Gold'},{hex:'#f97316',name:'Orange'},
   {hex:'#ffffff',name:'White'},{hex:'#fef3c7',name:'Cream'},{hex:'#d4a96a',name:'Nude'},{hex:'#0a0a0a',name:'Black'},
 ];
-const swatchContainer = document.getElementById('colorSwatches');
-palette.forEach(color => {
-  const s = document.createElement('button');
-  s.className = 'swatch' + (color.hex==='#ec4899' ? ' selected' : '');
-  s.style.background = color.hex;
-  s.title = color.name;
-  if (color.hex==='#ffffff') s.style.border = '3px solid #ddd';
-  s.onclick = () => {
-    document.querySelectorAll('.swatch').forEach(x => x.classList.remove('selected'));
-    s.classList.add('selected');
-    applyColor(color.hex);
-  };
+const swatchContainer=document.getElementById('colorSwatches');
+palette.forEach(color=>{
+  const s=document.createElement('button');
+  s.className='swatch'+(color.hex==='#ec4899'?' selected':'');
+  s.style.background=color.hex;s.title=color.name;
+  if(color.hex==='#ffffff')s.style.border='3px solid #ddd';
+  s.onclick=()=>{document.querySelectorAll('.swatch').forEach(x=>x.classList.remove('selected'));s.classList.add('selected');applyColor(color.hex);};
   swatchContainer.appendChild(s);
 });
-function applyColor(hex) {
-  const isLight = isLightColor(hex);
-  document.querySelectorAll('.nail').forEach(n => {
-    n.style.background = `linear-gradient(to bottom, ${hex}, ${darken(hex, 20)})`;
-    n.style.borderColor = isLight ? '#999' : 'var(--black)';
-  });
+function applyColor(hex){
+  const isLight=isLightColor(hex);
+  document.querySelectorAll('.nail').forEach(n=>{n.style.background='linear-gradient(to bottom,'+hex+','+darken(hex,20)+')';n.style.borderColor=isLight?'#999':'var(--black)';});
 }
-function applyCustomColor() {
-  const hex = document.getElementById('customColorInput').value;
-  document.querySelectorAll('.swatch').forEach(x => x.classList.remove('selected'));
-  applyColor(hex);
-}
-function isLightColor(hex) {
-  const r=parseInt(hex.slice(1,3),16), g=parseInt(hex.slice(3,5),16), b=parseInt(hex.slice(5,7),16);
-  return (r*299+g*587+b*114)/1000 > 180;
-}
-function darken(hex, pct) {
-  let r=parseInt(hex.slice(1,3),16), g=parseInt(hex.slice(3,5),16), b=parseInt(hex.slice(5,7),16);
-  r=Math.max(0,r-pct); g=Math.max(0,g-pct); b=Math.max(0,b-pct);
-  return '#'+[r,g,b].map(x=>x.toString(16).padStart(2,'0')).join('');
-}
+function applyCustomColor(){const hex=document.getElementById('customColorInput').value;document.querySelectorAll('.swatch').forEach(x=>x.classList.remove('selected'));applyColor(hex);}
+function isLightColor(hex){const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);return(r*299+g*587+b*114)/1000>180;}
+function darken(hex,pct){let r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);r=Math.max(0,r-pct);g=Math.max(0,g-pct);b=Math.max(0,b-pct);return'#'+[r,g,b].map(x=>x.toString(16).padStart(2,'0')).join('');}
 applyColor('#ec4899');
 
-/* ===== CATALOG TABS ===== */
-function switchTab(tab, btn) {
-  document.querySelectorAll('.catalog-section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.tier-tab').forEach(t => t.classList.remove('active'));
+/* CATALOG TABS */
+function switchTab(tab,btn){
+  document.querySelectorAll('.catalog-section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tier-tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('tab-'+tab).classList.add('active');
   btn.classList.add('active');
 }
 
-/* ===== ORDER FROM CARD ===== */
-function goOrder(style) {
-  const msg = `💅 HEY! I WANT TO ORDER FROM SETSBYRUBES 💅\n\n🎨 Set Type: ${style}\n\n(I'll fill in my shape, color, size, and any inspo details here!)`;
-  navigator.clipboard.writeText(msg).catch(()=>{});
-  showToast('💅 Copied! Redirecting to Instagram DMs...');
-  setTimeout(() => { window.location.href = 'instagram://user?username=setsbyrubes'; }, 400);
-  setTimeout(() => { window.open('https://ig.me/m/setsbyrubes','_blank'); }, 1500);
-}
-
-/* ===== IMAGE PREVIEW (order form) ===== */
-document.getElementById('nailInspoPhoto').addEventListener('change', function() {
-  const file = this.files[0];
-  const preview = document.getElementById('previewImage');
-  if (file) { preview.src = URL.createObjectURL(file); preview.style.display = 'block'; }
-});
-
-/* ===== IMAGE PREVIEW (review form) ===== */
-document.getElementById('reviewPhoto').addEventListener('change', function() {
-  const file = this.files[0];
-  const preview = document.getElementById('reviewPhotoPreview');
-  if (file) { preview.src = URL.createObjectURL(file); preview.style.display = 'block'; }
-});
-
-/* ===== SCROLL REVEAL ===== */
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold:.1 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-/* ===== TOAST ===== */
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg; t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 3500);
-}
-
-/* ===== ORDER SUBMIT ===== */
-function handleFormSubmit(e) {
-  e.preventDefault();
-  const name     = document.getElementById('name').value;
-  const type     = document.getElementById('orderType').value;
-  const shape    = document.getElementById('shape').value;
-  const delivery = document.getElementById('deliveryOpt').value;
-  const custom   = document.getElementById('customRequest').value;
-  const fileInput = document.getElementById('nailInspoPhoto');
-  const photoStatus = fileInput.files.length > 0 ? 'Attached ✅' : 'None ❌';
-
-  const msg = `💅 NEW ORDER REQUEST 💅\n\n👤 Name: ${name}\n🎨 Set Type: ${type}\n📏 Shape & Length: ${shape}\n🚚 Delivery: ${delivery}\n✏️ Custom Request: ${custom||'None'}\n📸 Sizing/Inspo Photo: ${photoStatus}\n\n✨ Sent from SetsByRube Website ✨`;
-  navigator.clipboard.writeText(msg).catch(()=>{});
-
-  // Netlify submit
-  const form = document.getElementById('orderForm');
-  const data = new FormData(form);
-  fetch('/', { method:'POST', body:data }).catch(()=>{});
-
-  showToast('✅ Order submitted! Copied for Instagram too 💌');
-  setTimeout(() => window.open('https://ig.me/m/setsbyrubes','_blank'), 800);
-}
-
-/* ===== STARS ===== */
-window._selectedStars = 0;
-function setStars(n) {
-  window._selectedStars = n;
-  document.querySelectorAll('.star-btn').forEach((btn, i) => {
-    btn.classList.toggle('lit', i < n);
-  });
-}
-
-/* ===== LIGHTBOX ===== */
-function openLightbox(img, title, tier) {
-  document.getElementById('lightboxImg').src = img;
-  document.getElementById('lightboxTitle').textContent = title;
-  document.getElementById('lightboxTier').textContent = tier;
-  document.getElementById('lightbox').classList.add('open');
+/* LIGHTBOX */
+function openLightbox(src, emoji, title, sub, tier, badgeClass) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  const ph = document.getElementById('lightboxEmoji');
+  const pill = document.getElementById('lightboxTierPill');
+  img.style.display = 'none'; img.src = ''; ph.style.display = 'none';
+  if (src && src !== '') {
+    img.style.display = 'block'; img.src = src;
+    img.onerror = function() { this.style.display='none'; ph.style.display='block'; ph.textContent=emoji||'💅'; };
+  } else {
+    ph.style.display = 'block'; ph.textContent = emoji || '💅';
+  }
+  document.getElementById('lightboxTitle').textContent = title || '';
+  document.getElementById('lightboxSub').textContent = sub || '';
+  pill.textContent = tier || '';
+  pill.className = 'lightbox-tier-pill ' + (badgeClass || 'badge-plain');
+  lb.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-function closeLightbox(e) {
-  const lb = document.getElementById('lightbox');
-  if (e && e.target !== lb && !lb.querySelector('.lightbox-close').contains(e.target)) return;
-  lb.classList.remove('open');
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
   document.body.style.overflow = '';
+  setTimeout(()=>{ document.getElementById('lightboxImg').src=''; }, 350);
 }
-document.getElementById('lightbox').addEventListener('click', closeLightbox);
-document.addEventListener('keydown', e => { if (e.key==='Escape') { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow=''; } });
+document.getElementById('lightbox').addEventListener('click', function(e) { if(e.target===this) closeLightbox(); });
+document.getElementById('lightboxCloseBtn').addEventListener('click', closeLightbox);
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
+
+/* MODALS */
+function openModal(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.modal-overlay').forEach(m=>{m.addEventListener('click',function(e){if(e.target===this)closeModal(this.id);});});
+
+/* FORM PREVIEW */
+document.getElementById('nailInspoPhoto').addEventListener('change',function(){const file=this.files[0];const p=document.getElementById('previewImage');if(file){p.src=URL.createObjectURL(file);p.style.display='block';}});
+document.getElementById('reviewPhoto').addEventListener('change',function(){const file=this.files[0];const p=document.getElementById('reviewPhotoPreview');if(file){p.src=URL.createObjectURL(file);p.style.display='block';}});
+
+/* SCROLL REVEAL */
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* TOAST */
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3500);}
+
+/* ORDER SUBMIT */
+function handleFormSubmit(e){
+  e.preventDefault();
+  const name=document.getElementById('name').value;
+  const type=document.getElementById('orderType').value;
+  const shape=document.getElementById('shape').value;
+  const delivery=document.getElementById('deliveryOpt').value;
+  const custom=document.getElementById('customRequest').value;
+  const fileInput=document.getElementById('nailInspoPhoto');
+  const photoStatus=fileInput.files.length>0?'Attached ✅':'None ❌';
+  const msg='💅 NEW ORDER REQUEST 💅\n\n👤 Name: '+name+'\n🎨 Set Type: '+type+'\n📏 Shape & Length: '+shape+'\n🚚 Delivery: '+delivery+'\n✏️ Custom Request: '+(custom||'None')+'\n📸 Sizing/Inspo Photo: '+photoStatus+'\n\n✨ Sent from SetsByRube Website ✨';
+  navigator.clipboard.writeText(msg).catch(()=>{});
+  fetch('/',{method:'POST',body:new FormData(document.getElementById('orderForm'))}).catch(()=>{});
+  showToast('✅ Order submitted! Copied for Instagram too 💌');
+  setTimeout(()=>window.open('https://ig.me/m/setsbyrubes','_blank'),800);
+}
+
+/* STARS */
+window._selectedStars=0;
+function setStars(n){window._selectedStars=n;document.querySelectorAll('.star-btn').forEach((btn,i)=>btn.classList.toggle('lit',i<n));}
 </script>
 </body>
 </html>
