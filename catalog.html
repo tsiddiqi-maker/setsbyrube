@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catalog — SetsByRube 💅</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --pink:#ec4899;--pink-light:#f9a8d4;--pink-pale:#fce7f3;--pink-ultra:#fff0f9;
+  --black:#0a0a0a;--white:#ffffff;--gray:#666;--border:#f0d9e8;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden;cursor:none;}
+
+/* CURSOR */
+.cursor{width:12px;height:12px;background:var(--pink);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s,width .2s,height .2s;mix-blend-mode:multiply;}
+.cursor-ring{width:36px;height:36px;border:2px solid var(--pink);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .15s ease;opacity:.5;}
+.cursor.big{width:24px;height:24px;}
+@media(hover:none){.cursor,.cursor-ring{display:none;}body{cursor:auto;}}
+
+/* SPARKLES */
+.sparkle{position:fixed;pointer-events:none;z-index:9997;font-size:14px;animation:sparkle-out .7s ease forwards;}
+@keyframes sparkle-out{0%{opacity:1;transform:scale(1) translateY(0)}100%{opacity:0;transform:scale(.3) translateY(-30px)}}
+
+/* TOP BAR */
+.top-bar{background:var(--black);color:white;padding:10px;white-space:nowrap;overflow:hidden;font-size:12px;font-weight:700;letter-spacing:2px;}
+.top-bar span{display:inline-block;animation:scroll-text 25s linear infinite;}
+@keyframes scroll-text{0%{transform:translateX(100vw)}100%{transform:translateX(-100%)}}
+
+/* NAV */
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 7%;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);z-index:100;}
+.logo{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;text-decoration:none;color:var(--black);letter-spacing:-1px;}
+.logo span{color:var(--pink);font-style:italic;}
+.nav-links{display:flex;gap:30px;align-items:center;}
+.nav-links a{text-decoration:none;color:var(--black);font-weight:600;font-size:13px;letter-spacing:1px;text-transform:uppercase;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:var(--pink);transition:width .3s;}
+.nav-links a:hover::after{width:100%;}
+.nav-links a.active::after{width:100%;}
+.nav-cta{background:var(--pink)!important;color:white!important;padding:10px 22px!important;border-radius:50px;letter-spacing:.5px!important;}
+.nav-cta::after{display:none!important;}
+
+/* CATALOG HERO */
+.catalog-hero{padding:60px 7% 40px;background:linear-gradient(135deg,#fff0f9 0%,#ffffff 60%,#fce7f3 100%);position:relative;overflow:hidden;}
+.catalog-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(236,72,153,.1),transparent 70%);border-radius:50%;animation:pulse-glow 4s ease-in-out infinite;}
+@keyframes pulse-glow{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.1);opacity:1}}
+.catalog-hero-inner{max-width:700px;}
+.section-label{display:inline-block;background:var(--pink-pale);color:var(--pink);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:7px 14px;border-radius:50px;margin-bottom:12px;}
+.catalog-hero h1{font-family:'Playfair Display',serif;font-size:52px;font-weight:900;line-height:1.05;margin-bottom:14px;}
+.catalog-hero h1 em{font-style:italic;color:var(--pink);}
+.catalog-hero p{color:var(--gray);font-size:16px;line-height:1.7;max-width:500px;}
+
+/* TIER CARDS */
+.tier-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0 7% 0;margin-top:-20px;position:relative;z-index:10;}
+.tier-card{background:white;border:2px solid var(--border);border-radius:22px;padding:28px 24px;box-shadow:0 6px 30px rgba(0,0,0,.06);cursor:pointer;transition:transform .25s,box-shadow .25s,border-color .25s;}
+.tier-card:hover,.tier-card.active{transform:translateY(-4px);box-shadow:0 14px 40px rgba(236,72,153,.15);border-color:var(--pink);}
+.tier-card.active{background:var(--pink-ultra);}
+.tier-card-price{font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:var(--pink);display:block;margin-bottom:4px;}
+.tier-card h3{font-size:16px;font-weight:800;margin-bottom:6px;}
+.tier-card p{color:var(--gray);font-size:13px;line-height:1.5;}
+.tier-card-emoji{font-size:28px;margin-bottom:12px;display:block;}
+
+/* FILTERS BAR */
+.filters-bar{display:flex;align-items:center;gap:12px;padding:28px 7% 0;flex-wrap:wrap;}
+.filter-label{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gray);margin-right:4px;}
+.filter-chip{padding:9px 20px;border-radius:50px;border:2px solid var(--border);background:white;font-weight:700;font-size:12px;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;color:var(--black);}
+.filter-chip:hover{border-color:var(--pink);color:var(--pink);}
+.filter-chip.active{background:var(--black);color:white;border-color:var(--black);}
+
+/* CATALOG MAIN */
+.catalog-main{padding:30px 7% 90px;}
+
+/* SECTION HEADERS */
+.tier-section{display:none;animation:fade-in .3s ease;}
+.tier-section.active{display:block;}
+@keyframes fade-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.tier-section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px;padding-bottom:20px;border-bottom:2px solid var(--border);flex-wrap:wrap;gap:12px;}
+.tier-section-header h2{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;}
+.tier-section-header p{color:var(--gray);font-size:14px;margin-top:4px;}
+.tier-big-price{font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:var(--pink);}
+
+/* NAIL GRID */
+.nail-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px;}
+.nail-card{border-radius:22px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.07);border:2px solid var(--border);transition:transform .25s,box-shadow .25s;background:white;cursor:pointer;position:relative;}
+.nail-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(236,72,153,.2);border-color:var(--pink-light);}
+.nail-card-img-wrap{position:relative;height:260px;overflow:hidden;background:linear-gradient(135deg,#fce7f3,#fff0f9);}
+.nail-card-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
+.nail-card:hover .nail-card-img-wrap img{transform:scale(1.06);}
+.nail-img-placeholder{width:100%;height:260px;display:flex;align-items:center;justify-content:center;font-size:60px;}
+.nail-card-info{padding:14px 16px;display:flex;justify-content:space-between;align-items:center;}
+.nail-card-info span{font-weight:600;font-size:14px;color:var(--gray);}
+.order-this{background:var(--black);color:white;border:none;padding:8px 16px;border-radius:50px;font-size:12px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .2s;text-decoration:none;display:inline-block;}
+.order-this:hover{background:var(--pink);}
+
+/* ZOOM OVERLAY */
+.zoom-hint{position:absolute;inset:0;background:rgba(236,72,153,0);display:flex;align-items:center;justify-content:center;transition:background .3s;z-index:1;}
+.zoom-hint span{opacity:0;transform:scale(.7);transition:opacity .25s,transform .25s;background:white;color:var(--pink);font-size:13px;font-weight:800;padding:10px 20px;border-radius:50px;box-shadow:0 4px 20px rgba(0,0,0,.2);}
+.nail-card:hover .zoom-hint{background:rgba(236,72,153,.15);}
+.nail-card:hover .zoom-hint span{opacity:1;transform:scale(1);}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s;}
+.lightbox.open{opacity:1;pointer-events:all;}
+.lightbox-inner{background:white;border-radius:28px;overflow:hidden;max-width:540px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,.5);transform:scale(.9) translateY(20px);transition:transform .35s cubic-bezier(.34,1.56,.64,1);position:relative;}
+.lightbox.open .lightbox-inner{transform:scale(1) translateY(0);}
+.lightbox-img-wrap{position:relative;max-height:580px;overflow:hidden;background:linear-gradient(135deg,#fce7f3,#fff0f9);}
+.lightbox-img-wrap img{width:100%;max-height:580px;object-fit:cover;display:block;}
+.lightbox-placeholder{width:100%;height:380px;display:flex;align-items:center;justify-content:center;font-size:90px;}
+.lightbox-info{padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--border);}
+.lightbox-info-text h4{font-weight:800;font-size:17px;margin-bottom:3px;}
+.lightbox-info-text span{color:var(--gray);font-size:13px;}
+.lightbox-close{position:absolute;top:14px;right:14px;width:38px;height:38px;background:white;border:none;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.3);transition:background .2s,transform .2s;z-index:2;}
+.lightbox-close:hover{background:var(--pink-pale);transform:rotate(90deg);}
+.lightbox-tier-tag{position:absolute;top:14px;left:14px;font-size:11px;font-weight:800;padding:5px 12px;border-radius:50px;z-index:2;}
+/* Arrow nav */
+.lightbox-prev,.lightbox-next{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;background:white;border:none;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 14px rgba(0,0,0,.25);transition:background .2s,transform .2s;z-index:2;}
+.lightbox-prev{left:14px;}
+.lightbox-next{right:14px;}
+.lightbox-prev:hover,.lightbox-next:hover{background:var(--pink-pale);transform:translateY(-50%) scale(1.1);}
+
+/* BADGES */
+.badge-plain{background:#fce7f3;color:#be185d;}
+.badge-minimal{background:#ede9fe;color:#7c3aed;}
+.badge-max{background:#fef3c7;color:#b45309;}
+
+/* CTA BANNER */
+.cta-banner{margin-top:60px;background:var(--black);border-radius:28px;padding:50px;text-align:center;position:relative;overflow:hidden;}
+.cta-banner::before{content:'💅';position:absolute;font-size:160px;opacity:.05;top:50%;left:50%;transform:translate(-50%,-50%);}
+.cta-banner h3{font-family:'Playfair Display',serif;font-size:36px;color:white;margin-bottom:12px;}
+.cta-banner h3 em{font-style:italic;color:var(--pink-light);}
+.cta-banner p{color:rgba(255,255,255,.6);margin-bottom:28px;font-size:15px;}
+.btn{padding:15px 30px;border-radius:50px;font-weight:800;font-size:13px;text-decoration:none;display:inline-block;letter-spacing:.5px;transition:transform .2s,box-shadow .2s;}
+.btn:hover{transform:translateY(-2px);}
+.btn-pink{background:var(--pink);color:white;box-shadow:0 4px 20px rgba(236,72,153,.3);}
+.btn-pink:hover{box-shadow:0 8px 30px rgba(236,72,153,.5);}
+.btn-white{background:white;color:var(--black);box-shadow:0 4px 20px rgba(0,0,0,.15);}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:.1s;}
+.reveal-delay-2{transition-delay:.2s;}
+.reveal-delay-3{transition-delay:.3s;}
+.reveal-delay-4{transition-delay:.4s;}
+
+/* TOAST */
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--black);color:white;padding:16px 28px;border-radius:50px;font-weight:700;font-size:14px;z-index:99999;border:2px solid var(--pink);transition:transform .4s cubic-bezier(.34,1.56,.64,1);white-space:nowrap;}
+.toast.show{transform:translateX(-50%) translateY(0);}
+
+/* FOOTER */
+footer{background:var(--black);color:white;padding:60px 7% 30px;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.footer-bottom p{color:rgba(255,255,255,.35);font-size:13px;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;margin-bottom:12px;}
+.footer-logo span{color:var(--pink);font-style:italic;}
+.footer-nav{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:30px;}
+.footer-nav a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;font-weight:600;transition:color .2s;}
+.footer-nav a:hover{color:var(--pink);}
+
+@media(max-width:900px){
+  .tier-cards{grid-template-columns:1fr;margin-top:20px;}
+  .catalog-hero h1{font-size:38px;}
+  .nail-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));}
+  .nav-links .hide-mobile{display:none;}
+}
+@media(max-width:600px){
+  nav{padding:16px 5%;}
+  .catalog-hero,.catalog-main,.filters-bar,.tier-cards{padding-left:5%;padding-right:5%;}
+  .catalog-hero h1{font-size:30px;}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="toast" id="toast"></div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="handleLightboxBg(event)">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <div class="lightbox-img-wrap">
+      <button class="lightbox-prev" onclick="prevImage(event)">‹</button>
+      <button class="lightbox-next" onclick="nextImage(event)">›</button>
+      <img id="lightboxImg" src="" alt="">
+      <div class="lightbox-placeholder" id="lightboxPlaceholder" style="display:none"></div>
+      <span class="lightbox-tier-tag" id="lightboxTierTag"></span>
+    </div>
+    <div class="lightbox-info">
+      <div class="lightbox-info-text">
+        <h4 id="lightboxTitle"></h4>
+        <span id="lightboxSub"></span>
+      </div>
+      <a href="order.html" class="order-this">Order This 💅</a>
+    </div>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <span>✨ CUSTOM PRESS-ON NAILS ✨ HANDMADE WITH LOVE ✨ LOCAL DROP-OFF ✨ SHIPPING AVAILABLE ✨ DM @SETSBYRUBES ✨ CUSTOM ORDERS OPEN ✨ MADE TO ORDER ✨</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="index.html">Sets<span>ByRube</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="catalog.html" class="active">Catalog</a>
+    <a href="order.html">Sizing & Order</a>
+    <a href="https://instagram.com/setsbyrubes" target="_blank" class="hide-mobile">Instagram</a>
+    <a href="order.html" class="nav-cta">Order Now 💅</a>
+  </div>
+</nav>
+
+<!-- CATALOG HERO -->
+<section class="catalog-hero">
+  <div class="catalog-hero-inner reveal">
+    <span class="section-label">✨ Full Collection</span>
+    <h1>The <em>Complete</em> Catalog</h1>
+    <p>Every style, every tier — from clean solid sets to full luxury nail art. Click any design to zoom in, then order your fave!</p>
+  </div>
+</section>
+
+<!-- TIER CARDS -->
+<div class="tier-cards">
+  <div class="tier-card active reveal" onclick="switchTier('plain',this)">
+    <span class="tier-card-emoji">💅</span>
+    <span class="tier-card-price">$8</span>
+    <h3>Plain Solid Set</h3>
+    <p>Clean glossy gel color in any shade. Simple & stunning.</p>
+  </div>
+  <div class="tier-card reveal reveal-delay-1" onclick="switchTier('minimal',this)">
+    <span class="tier-card-emoji">⭐</span>
+    <span class="tier-card-price">$16</span>
+    <h3>Minimal Design</h3>
+    <p>Subtle details — stars, florals, dots & french tips.</p>
+  </div>
+  <div class="tier-card reveal reveal-delay-2" onclick="switchTier('max',this)">
+    <span class="tier-card-emoji">🌸</span>
+    <span class="tier-card-price">$25</span>
+    <h3>Maximum Design</h3>
+    <p>Full luxury artwork. Send inspo, she'll make it happen.</p>
+  </div>
+</div>
+
+<!-- SHAPE FILTER -->
+<div class="filters-bar reveal">
+  <span class="filter-label">Shape:</span>
+  <button class="filter-chip active" onclick="filterShape('all',this)">All Shapes</button>
+  <button class="filter-chip" onclick="filterShape('almond',this)">Almond</button>
+  <button class="filter-chip" onclick="filterShape('coffin',this)">Coffin</button>
+  <button class="filter-chip" onclick="filterShape('square',this)">Square</button>
+  <button class="filter-chip" onclick="filterShape('round',this)">Round</button>
+</div>
+
+<!-- CATALOG MAIN -->
+<main class="catalog-main">
+
+  <!-- PLAIN -->
+  <div class="tier-section active" id="tier-plain">
+    <div class="tier-section-header reveal">
+      <div>
+        <h2>Plain Solid Sets</h2>
+        <p>Clean, glossy gel color — any shade. You pick the color!</p>
+      </div>
+      <span class="tier-big-price">$8</span>
+    </div>
+    <div class="nail-grid" id="plain-grid">
+
+      <div class="nail-card reveal" data-shape="coffin" data-title="White Coffin" data-sub="Classic & clean" data-emoji="💅" data-img="nail_plain1.png" onclick="openCardLightbox(this)">
+        <div class="nail-card-img-wrap">
+          <img src="nail_plain1.png" alt="White Coffin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="nail-img-placeholder" style="display:none">💅</div>
+          <div class="zoom-hint"><span>🔍 Zoom</span></div>
+        </div>
+        <div class="nail-card-info"><span>White / Coffin</span><a href="order.html" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+
+      <div class="nail-card reveal reveal-delay-1" data-shape="almond" data-title="Baby Pink Almond" data-sub="Soft & dreamy" data-emoji="🩷" data-img="nail_plain2.png" onclick="openCardLightbox(this)">
+        <div class="nail-card-img-wrap">
+          <img src="nail_plain2.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="nail-img-placeholder" style="display:none">🩷</div>
+          <div class="zoom-hint"><span>🔍 Zoom</span></div>
+        </div>
+        <div class="nail-card-info"><span>Baby Pink / Almond</span><a href="order.html" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+
+      <div class="nail-card reveal reveal-delay-2" data-shape="almond" data-title="Nude Almond" data-sub="Minimal & elegant" data-emoji="🤍" data-img="nail_plain3.png" onclick="openCardLightbox(this)">
+        <div class="nail-card-img-wrap">
+          <img src="nail_plain3.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="nail-img-placeholder" style="display:none">🤍</div>
+          <div class="zoom-hint"><span>🔍 Zoom</span></div>
+        </div>
+        <div class="nail-card-info"><span>Nude / Almond</span><a href="order.html" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+
+      <div class="nail-card reveal reveal-delay-3" data-shape="almond" data-title="Milky White Almond" data-sub="Fresh & clean" data-emoji="🍼" data-img="nail_plain4.png" onclick="openCardLightbox(this)">
+        <div class="nail-card-img-wrap">
+          <img src="nail_plain4.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="nail-img-placeholder" style="display:none">🍼</div>
+          <div class="zoom-hint"><span>🔍 Zoom</span></div>
+        </div>
+        <div class="nail-card-info"><span>Milky White / Almond</span><a href="order.html" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+
+      <div class="nail-card reveal reveal-delay-4" data-shape="square" data-title="Nude Beige Square" data-sub="Modern & versatile" data-emoji="🫧" data-img="nail_plain5.png" onclick="openCardLightbox(this)">
+        <div class="nail-card-img-wrap">
+          <img src="nail_plain5.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="nail-img-placeholder" style="display:none">🫧</div>
+          <div class="zoom-hint"><span>🔍 Zoom</span></div>
+        </div>
+        <div class="nail-card-info"><span>Nude Beige / Square</span><a href="order.html" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MINIMAL -->
+  <div class="tier-section" id="tier-minimal">
+    <div class="tier-section-header reveal">
+      <div>
+        <h2>Minimal Design Sets</h2>
+        <p>Subtle details — tiny florals, stars, hearts, dots & clean french tips.</p>
+      </div>
+      <span class="tier-big-price">$16</span>
+    </div>
+    <div class="nail-grid" id="minimal-grid">
+
+      <div class="nail-card reveal" data-shape="round" data-title="Gold Stars Round" data-sub="Subtle sparkle energy" data-emoji="⭐" data-img="nail_min1.png" onclick="openCardLightbox(this)">
+        <div class="nail-card-img-wrap">
+          <img src="nail_min1.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="nail-img-placeholder" style="display:none">⭐</div>
+          <div class="zoom-hint"><span>🔍 Zoom</span></div>
+        </div>
+        <div class="nail-card-info"><span>Gold Stars / Round</span><a href="order.html" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+
+      <div class="nail-card reveal reveal-delay-1" data-shape="square" data-title="Strawberry Square" data-sub="Cute & fruity" data-emoji="🍓" data-img="nail_min2.png" onclick="openCardLightbox(this)">
+        <div class="nail-card-img-wrap">
+          <img src="nail_min2.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="nail-img-placeholder" style="display:none">🍓</div>
+          <div class="zoom-hint"><span>🔍 Zoom</span></div>
+        </div>
+        <div class="nail-card-info"><span>Strawberry / Square</span><a href="order.html" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+
+      <div class="nail-card reveal reveal-delay-2" data-shape="round" data-title="Color Dots Round" data-sub="Fun & playful" data-emoji="🔵" data-img="nail_min3.png" onclick="openCardLightbox(this)">
+        <div class="nail-card-img-wrap">
+          <img src="nail_min3.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="nail-img-placeholder" style="display:none">🔵</div>
+          <div class="zoom-hint"><span>🔍 Zoom</span></div>
+        </div>
+        <div class="nail-card-info"><span>Color Dots / Round</span><a href="order.html" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+
+      <div class="nail-card reveal reveal-delay-3" data-shape="square" data-title="Heart Detail Square" data-sub="Romantic & sweet" data-emoji="💗" data-img="nail_min4.png" onclick="openCardLightbox(this)">
+        <div class="nail-card-img-wrap">
+          <img src="nail_min4.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="nail-img-placeholder" style="display:none">💗</div>
+          <div class="zoom-hint"><span>🔍 Zoom</span></div>
+        </div>
+        <div class="nail-card-info"><span>Heart Detail / Square</span><a href="order.html" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+
+      <div class="nail-card reveal reveal-delay-4" data-shape="round" data-title="Mini Flowers Round" data-sub="Delicate & floral" data-emoji="🌸" data-img="nail_min5.png" onclick="openCardLightbox(this)">
+        <div class="nail-card-img-wrap">
+          <img src="nail_min5.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="nail-img-placeholder" style="display:none">🌸</div>
+          <div class="zoom-hint"><span>🔍 Zoom</span></div>
+        </div>
+        <div class="nail-card-info"><span>Mini Flowers / Round</span><a href="order.html" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MAXIMUM -->
+  <div class="tier-section" id="tier-max">
+    <div class="tier-section-header reveal">
+      <div>
+        <h2>Maximum Design Sets</h2>
+        <p>Full luxury artwork — anything goes. Send inspo & she'll make it happen.</p>
+      </div>
+      <span class="tier-big-price">$25</span>
+    </div>
+    <div class="nail-grid" id="max-grid">
+
+      <div class="nail-card reveal" data-shape="almond" data-title="Red Floral Almond" data-sub="Full luxury art set" data-emoji="🌹" data-img="nail_max1.png" onclick="openCardLightbox(this)">
+        <div class="nail-card-img-wrap">
+          <img src="nail_max1.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="nail-img-placeholder" style="display:none">🌹</div>
+          <div class="zoom-hint"><span>🔍 Zoom</span></div>
+        </div>
+        <div class="nail-card-info"><span>Red Floral / Almond</span><a href="order.html" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+
+      <div class="nail-card reveal reveal-delay-1" data-shape="coffin" data-title="Yellow Daisy Coffin" data-sub="Bright & cheerful" data-emoji="🌻" data-img="nail_max2.png" onclick="openCardLightbox(this)">
+        <div class="nail-card-img-wrap">
+          <img src="nail_max2.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="nail-img-placeholder" style="display:none">🌻</div>
+          <div class="zoom-hint"><span>🔍 Zoom</span></div>
+        </div>
+        <div class="nail-card-info"><span>Yellow Daisy / Coffin</span><a href="order.html" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+
+      <div class="nail-card reveal reveal-delay-2" data-shape="coffin" data-title="Cherry Leopard Coffin" data-sub="Bold & unforgettable" data-emoji="🍒" data-img="nail_max3.png" onclick="openCardLightbox(this)">
+        <div class="nail-card-img-wrap">
+          <img src="nail_max3.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="nail-img-placeholder" style="display:none">🍒</div>
+          <div class="zoom-hint"><span>🔍 Zoom</span></div>
+        </div>
+        <div class="nail-card-info"><span>Cherry Leopard / Coffin</span><a href="order.html" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+
+      <div class="nail-card reveal reveal-delay-3" data-shape="coffin" data-title="Burgundy Gold Coffin" data-sub="Rich & luxurious" data-emoji="✨" data-img="nail_max4.png" onclick="openCardLightbox(this)">
+        <div class="nail-card-img-wrap">
+          <img src="nail_max4.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="nail-img-placeholder" style="display:none">✨</div>
+          <div class="zoom-hint"><span>🔍 Zoom</span></div>
+        </div>
+        <div class="nail-card-info"><span>Burgundy Gold / Coffin</span><a href="order.html" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+
+      <div class="nail-card reveal reveal-delay-4" data-shape="coffin" data-title="3D Floral Coffin" data-sub="Textured & dimensional" data-emoji="🪷" data-img="nail_max5.png" onclick="openCardLightbox(this)">
+        <div class="nail-card-img-wrap">
+          <img src="nail_max5.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="nail-img-placeholder" style="display:none">🪷</div>
+          <div class="zoom-hint"><span>🔍 Zoom</span></div>
+        </div>
+        <div class="nail-card-info"><span>3D Floral / Coffin</span><a href="order.html" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+
+      <div class="nail-card reveal" data-shape="square" data-title="Pink & Black Swirl Square" data-sub="Edgy & graphic" data-emoji="🖤" data-img="nail_max6.png" onclick="openCardLightbox(this)">
+        <div class="nail-card-img-wrap">
+          <img src="nail_max6.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="nail-img-placeholder" style="display:none">🖤</div>
+          <div class="zoom-hint"><span>🔍 Zoom</span></div>
+        </div>
+        <div class="nail-card-info"><span>Pink & Black Swirl / Square</span><a href="order.html" class="order-this" onclick="event.stopPropagation()">Order</a></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-banner reveal">
+    <h3>Ready to Order Your <em>Dream Set?</em></h3>
+    <p>Custom orders open — sizes, shapes, colors, anything you want 💖</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="order.html" class="btn btn-pink">Place Your Order →</a>
+      <a href="https://instagram.com/setsbyrubes" target="_blank" class="btn btn-white">📸 DM on Instagram</a>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Sets<span>ByRube</span></div>
+  <div class="footer-nav">
+    <a href="index.html">Home</a>
+    <a href="catalog.html">Catalog</a>
+    <a href="order.html">Order</a>
+    <a href="order.html#sizing">Sizing Guide</a>
+    <a href="https://instagram.com/setsbyrubes" target="_blank">@setsbyrubes</a>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 SetsByRube. All rights reserved.</p>
+    <span style="color:var(--pink)">💅 💖 ✨</span>
+  </div>
+</footer>
+
+<script>
+/* CURSOR */
+const cursor=document.getElementById('cursor');
+const cursorRing=document.getElementById('cursorRing');
+let mouseX=0,mouseY=0,ringX=0,ringY=0;
+document.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY;cursor.style.left=mouseX+'px';cursor.style.top=mouseY+'px';});
+(function animateRing(){ringX+=(mouseX-ringX)*.15;ringY+=(mouseY-ringY)*.15;cursorRing.style.left=ringX+'px';cursorRing.style.top=ringY+'px';requestAnimationFrame(animateRing);})();
+document.querySelectorAll('a,button,.nail-card,.tier-card,.filter-chip').forEach(el=>{
+  el.addEventListener('mouseenter',()=>cursor.classList.add('big'));
+  el.addEventListener('mouseleave',()=>cursor.classList.remove('big'));
+});
+
+/* SPARKLES */
+const sparkles=['✨','💅','💖','🌸','⭐','💫'];
+document.addEventListener('click',e=>{
+  for(let i=0;i<3;i++){
+    const s=document.createElement('div');s.className='sparkle';
+    s.textContent=sparkles[Math.floor(Math.random()*sparkles.length)];
+    s.style.left=(e.clientX+(Math.random()-.5)*40)+'px';
+    s.style.top=(e.clientY+(Math.random()-.5)*40)+'px';
+    document.body.appendChild(s);setTimeout(()=>s.remove(),700);
+  }
+});
+
+/* TIER SWITCH */
+let currentTier = 'plain';
+function switchTier(tier, el) {
+  document.querySelectorAll('.tier-section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tier-card').forEach(c=>c.classList.remove('active'));
+  document.getElementById('tier-'+tier).classList.add('active');
+  el.classList.add('active');
+  currentTier = tier;
+  activeShapeFilter = 'all';
+  document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));
+  document.querySelector('.filter-chip').classList.add('active');
+  reObserve();
+}
+
+/* SHAPE FILTER */
+let activeShapeFilter = 'all';
+function filterShape(shape, el) {
+  activeShapeFilter = shape;
+  document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  const section = document.getElementById('tier-'+currentTier);
+  section.querySelectorAll('.nail-card').forEach(card=>{
+    const cardShape = card.dataset.shape;
+    if(shape==='all'||cardShape===shape){
+      card.style.display='';
+      card.style.animation='fade-in .3s ease';
+    } else {
+      card.style.display='none';
+    }
+  });
+}
+
+/* LIGHTBOX STATE */
+let currentCards = [];
+let currentCardIndex = 0;
+const tierBadge = { plain:'badge-plain', minimal:'badge-minimal', max:'badge-max' };
+const tierLabel = { plain:'Plain — $8', minimal:'Minimal — $16', max:'Maximum — $25' };
+
+function openCardLightbox(card) {
+  // Build current list from visible cards in active section
+  const section = document.getElementById('tier-'+currentTier);
+  currentCards = Array.from(section.querySelectorAll('.nail-card')).filter(c=>c.style.display!=='none');
+  currentCardIndex = currentCards.indexOf(card);
+  showCardAtIndex(currentCardIndex);
+}
+
+function showCardAtIndex(idx) {
+  const card = currentCards[idx];
+  if(!card) return;
+  const img = card.dataset.img;
+  const title = card.dataset.title;
+  const sub = card.dataset.sub;
+  const emoji = card.dataset.emoji;
+  const lbImg = document.getElementById('lightboxImg');
+  const lbPh = document.getElementById('lightboxPlaceholder');
+  const tag = document.getElementById('lightboxTierTag');
+
+  if(img) {
+    lbImg.src = img;
+    lbImg.style.display = 'block';
+    lbPh.style.display = 'none';
+    lbImg.onerror = function(){this.style.display='none';lbPh.style.display='flex';lbPh.textContent=emoji;};
+  } else {
+    lbImg.style.display='none';
+    lbPh.style.display='flex';
+    lbPh.textContent = emoji;
+  }
+
+  document.getElementById('lightboxTitle').textContent = title;
+  document.getElementById('lightboxSub').textContent = sub;
+  tag.textContent = tierLabel[currentTier];
+  tag.className = 'lightbox-tier-tag ' + (tierBadge[currentTier]||'badge-plain');
+
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function prevImage(e) {
+  e.stopPropagation();
+  currentCardIndex = (currentCardIndex - 1 + currentCards.length) % currentCards.length;
+  showCardAtIndex(currentCardIndex);
+}
+
+function nextImage(e) {
+  e.stopPropagation();
+  currentCardIndex = (currentCardIndex + 1) % currentCards.length;
+  showCardAtIndex(currentCardIndex);
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function handleLightboxBg(e) {
+  if(e.target===document.getElementById('lightbox')) closeLightbox();
+}
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape') closeLightbox();
+  if(e.key==='ArrowLeft') { currentCardIndex=(currentCardIndex-1+currentCards.length)%currentCards.length; showCardAtIndex(currentCardIndex); }
+  if(e.key==='ArrowRight') { currentCardIndex=(currentCardIndex+1)%currentCards.length; showCardAtIndex(currentCardIndex); }
+});
+
+/* SCROLL REVEAL */
+function reObserve() {
+  document.querySelectorAll('.reveal').forEach(el=>{
+    if(!el.classList.contains('visible')) obs.observe(el);
+  });
+}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* TOAST */
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3500);}
+</script>
+</body>
+</html>
